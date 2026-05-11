@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Devanshi Patel — MSE EE at UPenn | ASIC Design, RTL, Physical Design, VLSI | RISC-V Tapeout | Seeking Summer 2026 Internship">
+<title>Devanshi Patel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #080a09;
+  --bg2: #0e100f;
+  --bg3: #161918;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.11);
+  --text: #dde8de;
+  --text2: #7a8f7b;
+  --text3: #445045;
+  --green: #4ade80;
+  --green-dim: rgba(74,222,128,0.07);
+  --green-border: rgba(74,222,128,0.18);
+  --amber: #fbbf24;
+  --amber-dim: rgba(251,191,36,0.07);
+  --blue: #60a5fa;
+  --blue-dim: rgba(96,165,250,0.07);
+  --mono: 'DM Mono', monospace;
+  --serif: 'Instrument Serif', serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+/* noise overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--green); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  height: 56px;
+  background: rgba(8,10,9,0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--green);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex; gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text2);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--green); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 100px 40px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+
+.hero-eyebrow::after {
+  content: '';
+  display: block;
+  width: 48px; height: 1px;
+  background: var(--green);
+  opacity: 0.4;
+}
+
+h1.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 400;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+h1.hero-name em {
+  font-style: italic;
+  color: var(--green);
+}
+
+.hero-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 36px;
+  letter-spacing: 0.05em;
+}
+
+.hero-desc {
+  max-width: 560px;
+  font-size: 16px;
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+.hero-desc strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.hero-chips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 48px;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  background: var(--bg2);
+}
+
+.chip.green { border-color: var(--green-border); color: var(--green); background: var(--green-dim); }
+.chip.amber { border-color: rgba(251,191,36,0.25); color: var(--amber); background: var(--amber-dim); }
+.chip.blue  { border-color: rgba(96,165,250,0.25); color: var(--blue);  background: var(--blue-dim); }
+
+.hero-links {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  color: var(--text2);
+  transition: all 0.2s;
+}
+
+.btn:hover { border-color: var(--green); color: var(--green); background: var(--green-dim); }
+.btn.primary { border-color: var(--green); color: var(--green); background: var(--green-dim); }
+.btn.primary:hover { background: rgba(74,222,128,0.14); }
+
+.hero-grid {
+  position: absolute; right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 280px; height: 280px;
+  opacity: 0.04;
+  display: grid; grid-template-columns: repeat(8,1fr); gap: 6px;
+}
+
+.hero-grid-dot {
+  width: 3px; height: 3px;
+  background: var(--green);
+  border-radius: 50%;
+  margin: auto;
+}
+
+/* ── SECTIONS ── */
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 48px;
+  display: flex; align-items: center; gap: 12px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1; max-width: 80px; height: 1px;
+  background: var(--green); opacity: 0.3;
+}
+
+h2.section-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 48px;
+  letter-spacing: -0.01em;
+}
+
+/* ── EXPERIENCE ── */
+.exp-grid { display: flex; flex-direction: column; gap: 2px; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  padding: 28px 32px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.exp-item:hover {
+  border-color: var(--border2);
+  background: var(--bg3);
+}
+
+.exp-role {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.exp-place {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+}
+
+.exp-bullets li {
+  font-size: 13px;
+  color: var(--text2);
+  padding-left: 16px;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '—';
+  position: absolute; left: 0;
+  color: var(--text3);
+  font-family: var(--mono);
+}
+
+.exp-date {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2px;
+}
+
+.project-card {
+  padding: 28px 28px 24px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.project-card:hover { border-color: var(--border2); background: var(--bg3); }
+.project-card:hover::before { background: var(--green); }
+.project-card.amber:hover::before { background: var(--amber); }
+.project-card.blue:hover::before { background: var(--blue); }
+
+.project-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+
+.project-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.project-metrics {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 16px;
+}
+
+.metric-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  border: 1px solid var(--green-border);
+  color: var(--green);
+  background: var(--green-dim);
+}
+
+.metric-tag.amber {
+  border-color: rgba(251,191,36,0.25);
+  color: var(--amber);
+  background: var(--amber-dim);
+}
+
+.metric-tag.blue {
+  border-color: rgba(96,165,250,0.25);
+  color: var(--blue);
+  background: var(--blue-dim);
+}
+
+.project-tools {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.05em;
+}
+
+.project-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-top: 12px;
+  transition: color 0.2s;
+}
+
+.project-link:hover { color: var(--green); }
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2px;
+}
+
+.skill-group {
+  padding: 24px 28px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.skill-group-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+}
+
+.skill-list li {
+  font-size: 12px;
+  color: var(--text2);
+  font-family: var(--mono);
+}
+
+/* ── CONTACT ── */
+#contact {
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+#contact .section-label { justify-content: center; }
+#contact .section-label::after { display: none; }
+
+.contact-tagline {
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text2);
+  max-width: 540px;
+  margin: 0 auto 40px;
+  line-height: 1.4;
+}
+
+.contact-links {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.fade-up:nth-child(1) { animation-delay: 0.1s; }
+.fade-up:nth-child(2) { animation-delay: 0.2s; }
+.fade-up:nth-child(3) { animation-delay: 0.3s; }
+.fade-up:nth-child(4) { animation-delay: 0.4s; }
+.fade-up:nth-child(5) { animation-delay: 0.5s; }
+.fade-up:nth-child(6) { animation-delay: 0.6s; }
+
+@media (max-width: 640px) {
+  nav { padding: 0 20px; }
+  section, #hero { padding-left: 20px; padding-right: 20px; }
+  .nav-links { display: none; }
+  .exp-item { grid-template-columns: 1fr; }
+  .hero-grid { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">dp.</span>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid" aria-hidden="true">
+    <script>for(let i=0;i<64;i++)document.write('<div class="hero-grid-dot"></div>');</script>
+  </div>
+
+  <div class="hero-eyebrow fade-up">MSE Electrical Engineering · UPenn SEAS</div>
+
+  <h1 class="hero-name fade-up">
+    Devanshi<br><em>Patel</em>
+  </h1>
+
+  <p class="hero-title fade-up">ASIC Design · Physical Design · RTL · Mixed-Signal</p>
+
+  <p class="hero-desc fade-up">
+    Building silicon from <strong>RTL to tapeout</strong>. Currently taping out a
+    <strong>RISC-V SoC on TSMC 40nm</strong> at UPenn and researching neuromorphic
+    hardware at Miskin Lab. Seeking <strong>Summer 2026</strong> internships in
+    ASIC design and physical design.
+  </p>
+
+  <div class="hero-chips fade-up">
+    <span class="chip green">TSMC 40nm Tapeout</span>
+    <span class="chip green">Genus · Innovus</span>
+    <span class="chip green">STA · CTS · PPA</span>
+    <span class="chip">RISC-V</span>
+    <span class="chip">SystemVerilog</span>
+    <span class="chip">Cadence Suite</span>
+    <span class="chip amber">IEEE Published</span>
+    <span class="chip blue">UPenn SEAS</span>
+  </div>
+
+  <div class="hero-links fade-up">
+    <a href="mailto:patel5@seas.upenn.edu" class="btn primary">patel5@seas.upenn.edu</a>
+    <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
+    <a href="https://github.com/devanship30" target="_blank" class="btn">GitHub</a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Where I've worked</h2>
+
+  <div class="exp-grid">
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Graduate Hardware Design Project — RISC-V Chip Tapeout</div>
+        <div class="exp-place">University of Pennsylvania</div>
+        <ul class="exp-bullets">
+          <li>Generated RISC-V SoC RTL via Chipyard (Chisel); authored SDC constraints for multi-corner synthesis targeting TSMC 40nm PDK</li>
+          <li>Ran complete mflowgen ASIC flow: logic synthesis (Genus), place-and-route with CTS (Innovus), STA-driven timing closure, and PPA analysis across synthesis iterations</li>
+          <li>Resolved setup/hold violations and achieved full tapeout sign-off through iterative physical design closure</li>
+        </ul>
+      </div>
+      <div class="exp-date">Feb 2026 — Present</div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Graduate Research Assistant</div>
+        <div class="exp-place">Miskin Lab · University of Pennsylvania</div>
+        <ul class="exp-bullets">
+          <li>Studying analog and neuromorphic learning frameworks: contrastive local learning and Equilibrium Propagation for hardware-based ML</li>
+          <li>Analyzing nonlinear analog networks using MOSFET-based elements and energy-minimization principles for low-power inference</li>
+          <li>Investigating locally adaptive learning rules for efficient on-chip training without global backpropagation</li>
+        </ul>
+      </div>
+      <div class="exp-date">Feb 2026 — Present</div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-role">Electronics Research Intern</div>
+        <div class="exp-place">eInfochips</div>
+        <ul class="exp-bullets">
+          <li>Designed and simulated 1-bit Sigma-Delta ADC using MATLAB Simulink, applying noise shaping and feedback techniques</li>
+          <li>Conducted literature survey of ADC architectures; analyzed chip manufacturing data gaining exposure to ASIC design flow</li>
+        </ul>
+      </div>
+      <div class="exp-date">May — Jun 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2 class="section-title">What I've built</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">RTL · Computer Architecture</div>
+      <div class="project-name">Pipelined RISC-V Processor</div>
+      <div class="project-desc">5-stage pipelined RISC-V processor in SystemVerilog with full RV32I ISA, data forwarding, hazard detection, AXI-Lite memory interface, and CLA/divider arithmetic units. Verified using cocotb testbenches and RISC-V ISA compliance suites.</div>
+      <div class="project-metrics">
+        <span class="metric-tag">RV32I ISA</span>
+        <span class="metric-tag">AXI-Lite</span>
+        <span class="metric-tag">cocotb verified</span>
+      </div>
+      <div class="project-tools">SystemVerilog · Tcl · Python · cocotb</div>
+      <a href="https://github.com/devanship30/CIS-5710_HOMEWORK_DEVANSHI" target="_blank" class="project-link">↗ GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Low-Power · FPGA</div>
+      <div class="project-name">Low-Power CNN Accelerator</div>
+      <div class="project-desc">CNN architecture with convolution, pooling, and FC layers on Zybo Z7-20 with pipelined fixed-point datapath. Applied RTL-level clock gating, 12-bit fixed-point quantization, and memory reuse to minimize switching activity.</div>
+      <div class="project-metrics">
+        <span class="metric-tag">51.79% dynamic power reduction</span>
+        <span class="metric-tag">37.34% total power reduction</span>
+        <span class="metric-tag">&gt;98% accuracy</span>
+      </div>
+      <div class="project-tools">SystemVerilog · Xilinx Vivado · Zybo Z7-20</div>
+    </div>
+
+    <div class="project-card amber">
+      <div class="project-tag">Memory Design · Cadence</div>
+      <div class="project-name">6T SRAM Memory Array (16×4)</div>
+      <div class="project-desc">Differential bit-line SRAM (VDD ≈ 1.2 V) with transistor sizing for read stability (SNM) and write margin. Designed periphery including precharge, tri-state drivers, and NAND-based 4×16 row decoder.</div>
+      <div class="project-metrics">
+        <span class="metric-tag amber">40.2% delay reduction</span>
+        <span class="metric-tag amber">23.2% power reduction</span>
+        <span class="metric-tag amber">54.19% FOM improvement</span>
+      </div>
+      <div class="project-tools">Cadence Virtuoso · 45nm</div>
+    </div>
+
+    <div class="project-card amber">
+      <div class="project-tag">Emerging Memory · NVM</div>
+      <div class="project-name">RRAM & STT-MRAM Characterization</div>
+      <div class="project-desc">Bit-cell and 32-bit array-level comparative analysis of RRAM and STT-MRAM using Verilog-A compact models. Designed voltage-mode and current-mode sense amplifiers; characterized switching delay, read latency, and write energy.</div>
+      <div class="project-metrics">
+        <span class="metric-tag amber">STT-MRAM 31× lower write energy (1-bit)</span>
+        <span class="metric-tag amber">158× lower at 32-bit array</span>
+        <span class="metric-tag amber">Sub-10 ns latencies</span>
+      </div>
+      <div class="project-tools">Cadence Virtuoso · Verilog-A · Spectre</div>
+    </div>
+
+    <div class="project-card blue">
+      <div class="project-tag">Mixed-Signal · ADC Design</div>
+      <div class="project-name">8-bit Pipeline ADC</div>
+      <div class="project-desc">Full 8-bit pipelined ADC in 600nm CMOS: bootstrapped track-and-hold (5 MS/s), static latch comparator, switched-capacitor MDAC with stage-scaled capacitors (1–8 pF), and 7-stage shift register for digital output alignment.</div>
+      <div class="project-metrics">
+        <span class="metric-tag blue">DNL ±0.8 LSB</span>
+        <span class="metric-tag blue">INL ±1 LSB</span>
+        <span class="metric-tag blue">ENOB 3.46 bits</span>
+        <span class="metric-tag blue">FOM 1.454 nJ/step</span>
+      </div>
+      <div class="project-tools">Cadence Virtuoso · AMI 0.6µm · MATLAB</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Circuit Design · IEEE Published</div>
+      <div class="project-name">Optimized Carry Select Adder</div>
+      <div class="project-desc">OCSA using pre-computation and MDCVSL-based selection logic to improve computation speed over conventional CSA architectures. Reduced propagation delay and power for low-power IoT applications. Published at IEEE SETCOM 2025.</div>
+      <div class="project-metrics">
+        <span class="metric-tag">10.52% delay reduction</span>
+        <span class="metric-tag">~20% power reduction</span>
+        <span class="metric-tag">IEEE SETCOM 2025</span>
+      </div>
+      <div class="project-tools">Cadence Virtuoso · 90nm</div>
+      <a href="https://doi.org/10.1109/SETCOM64758.2025.10932418" target="_blank" class="project-link">↗ IEEE Publication</a>
+    </div>
+
+    <div class="project-card blue">
+      <div class="project-tag">Analog IC Design · Op-Amp</div>
+      <div class="project-name">Two-Stage Miller-Compensated CMOS Op-Amp</div>
+      <div class="project-desc">Two-stage CMOS op-amp with differential input pair, current mirror biasing, and Miller compensation (Cc ≈ 1.1 pF, Rc ≈ 4.15 kΩ) for stable phase margin. Optimized through transistor sizing and bias tuning. Reused as MDAC amplifier core in the 8-bit pipeline ADC.</div>
+      <div class="project-metrics">
+        <span class="metric-tag blue">+27% DC gain</span>
+        <span class="metric-tag blue">+240% GBW</span>
+        <span class="metric-tag blue">+196% slew rate</span>
+        <span class="metric-tag blue">≈60° phase margin</span>
+      </div>
+      <div class="project-tools">Cadence Virtuoso · AMI 0.6µm · Spectre</div>
+    </div>
+
+    <div class="project-card blue">
+      <div class="project-tag">Analog IC Design · TIA</div>
+      <div class="project-name">Wideband Transimpedance Amplifier</div>
+      <div class="project-desc">Wideband TIA using a 6-stage architecture (CG, differential, cascaded CS, source follower) for high-speed optical receivers. Achieved low input impedance via common-gate input stage with distributed gain across cascaded CS stages for bandwidth stability.</div>
+      <div class="project-metrics">
+        <span class="metric-tag blue">+102% gain improvement</span>
+        <span class="metric-tag blue">+7% bandwidth</span>
+        <span class="metric-tag blue">+98% output swing</span>
+        <span class="metric-tag blue">−82% power</span>
+      </div>
+      <div class="project-tools">Cadence Virtuoso · 45nm · Spectre</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">RTL · Digital Design</div>
+      <div class="project-name">Custom Single-Cycle Processor</div>
+      <div class="project-desc">RTL processor with FSM-controlled fetch-decode-execute pipeline supporting arithmetic, logical, memory, and control-flow instructions. Implemented 32-register file, instruction/data memory, and status flag handling. Verified via Verilog testbench across all instruction types.</div>
+      <div class="project-metrics">
+        <span class="metric-tag">32-register file</span>
+        <span class="metric-tag">Full instruction set</span>
+        <span class="metric-tag">Testbench verified</span>
+      </div>
+      <div class="project-tools">Verilog · ModelSim</div>
+      <a href="https://github.com/devanship30/verilog-custom-processor" target="_blank" class="project-link">↗ GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2 class="section-title">Tools & technologies</h2>
+
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-label">Languages & HDL</div>
+      <ul class="skill-list">
+        <li>Verilog · SystemVerilog · VHDL</li>
+        <li>C/C++ · Python · MATLAB</li>
+        <li>Tcl · Perl · Verilog-A</li>
+        <li>Git · Linux · Shell</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-label">Digital / VLSI</div>
+      <ul class="skill-list">
+        <li>RTL Design · FSM & Datapath</li>
+        <li>Logic Synthesis · SDC Constraints</li>
+        <li>STA · Timing Closure · CTS</li>
+        <li>PPA Analysis · ASIC Design Flow</li>
+        <li>AXI-Lite · Clock Gating · SRAM Design</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-label">Architecture & Verification</div>
+      <ul class="skill-list">
+        <li>Processor Microarchitecture</li>
+        <li>Single-Cycle · Multicycle · Pipelined</li>
+        <li>Functional Verification · cocotb</li>
+        <li>Testbench Development</li>
+        <li>RTL Simulation · Fixed-Point Design</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-label">EDA Tools</div>
+      <ul class="skill-list">
+        <li>Cadence Virtuoso · Spectre</li>
+        <li>Genus (Synthesis) · Innovus (P&R)</li>
+        <li>Xcelium · Chipyard · mflowgen</li>
+        <li>Xilinx Vivado · cocotb</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <p class="contact-tagline">Open to Summer 2026 internships in ASIC design, physical design, and RTL.</p>
+  <div class="contact-links">
+    <a href="mailto:patel5@seas.upenn.edu" class="btn primary">patel5@seas.upenn.edu</a>
+    <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
+    <a href="https://github.com/devanship30" target="_blank" class="btn">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-note">Devanshi Patel · MSE EE · UPenn SEAS 2027</span>
+  <span class="footer-note">patel5@seas.upenn.edu</span>
+</footer>
+
+</body>
+</html>
