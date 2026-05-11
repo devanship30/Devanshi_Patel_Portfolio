@@ -16,16 +16,12 @@
   --bg3: #161918;
   --border: rgba(255,255,255,0.06);
   --border2: rgba(255,255,255,0.11);
-  --text: #dde8de;
-  --text2: #7a8f7b;
-  --text3: #445045;
-  --green: #4ade80;
-  --green-dim: rgba(74,222,128,0.07);
-  --green-border: rgba(74,222,128,0.18);
-  --amber: #fbbf24;
-  --amber-dim: rgba(251,191,36,0.07);
-  --blue: #60a5fa;
-  --blue-dim: rgba(96,165,250,0.07);
+  --text: #f0f0f0;
+  --text2: #888888;
+  --text3: #444444;
+  --accent: #3b82f6;
+  --accent-dim: rgba(59,130,246,0.07);
+  --accent-border: rgba(59,130,246,0.22);
   --mono: 'DM Mono', monospace;
   --serif: 'Instrument Serif', serif;
   --sans: 'DM Sans', sans-serif;
@@ -55,7 +51,7 @@ body::before {
 }
 
 a { color: inherit; text-decoration: none; }
-a:hover { color: var(--green); }
+a:hover { color: var(--accent); }
 
 /* ── NAV ── */
 nav {
@@ -71,7 +67,7 @@ nav {
 .nav-logo {
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--green);
+  color: var(--accent);
   letter-spacing: 0.02em;
 }
 
@@ -89,7 +85,7 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--green); }
+.nav-links a:hover { color: var(--accent); }
 
 /* ── HERO ── */
 #hero {
@@ -106,7 +102,7 @@ nav {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--accent);
   margin-bottom: 24px;
   display: flex; align-items: center; gap: 12px;
 }
@@ -115,7 +111,7 @@ nav {
   content: '';
   display: block;
   width: 48px; height: 1px;
-  background: var(--green);
+  background: var(--accent);
   opacity: 0.4;
 }
 
@@ -131,7 +127,7 @@ h1.hero-name {
 
 h1.hero-name em {
   font-style: italic;
-  color: var(--green);
+  color: var(--accent);
 }
 
 .hero-title {
@@ -172,9 +168,9 @@ h1.hero-name em {
   background: var(--bg2);
 }
 
-.chip.green { border-color: var(--green-border); color: var(--green); background: var(--green-dim); }
-.chip.amber { border-color: rgba(251,191,36,0.25); color: var(--amber); background: var(--amber-dim); }
-.chip.blue  { border-color: rgba(96,165,250,0.25); color: var(--blue);  background: var(--blue-dim); }
+.chip.green { border-color: var(--accent-border); color: var(--accent); background: var(--accent-dim); }
+
+.chip.blue  { border-color: rgba(96,165,250,0.25); color: var(--accent);  background: var(--accent-dim); }
 
 .hero-links {
   display: flex; gap: 16px; flex-wrap: wrap;
@@ -193,8 +189,8 @@ h1.hero-name em {
   transition: all 0.2s;
 }
 
-.btn:hover { border-color: var(--green); color: var(--green); background: var(--green-dim); }
-.btn.primary { border-color: var(--green); color: var(--green); background: var(--green-dim); }
+.btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.btn.primary { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
 .btn.primary:hover { background: rgba(74,222,128,0.14); }
 
 .hero-grid {
@@ -207,7 +203,7 @@ h1.hero-name em {
 
 .hero-grid-dot {
   width: 3px; height: 3px;
-  background: var(--green);
+  background: var(--accent);
   border-radius: 50%;
   margin: auto;
 }
@@ -225,7 +221,7 @@ section {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--accent);
   margin-bottom: 48px;
   display: flex; align-items: center; gap: 12px;
 }
@@ -233,7 +229,7 @@ section {
 .section-label::after {
   content: '';
   flex: 1; max-width: 80px; height: 1px;
-  background: var(--green); opacity: 0.3;
+  background: var(--accent); opacity: 0.3;
 }
 
 h2.section-title {
@@ -274,7 +270,7 @@ h2.section-title {
 .exp-place {
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--green);
+  color: var(--accent);
   margin-bottom: 12px;
   letter-spacing: 0.05em;
 }
@@ -334,9 +330,9 @@ h2.section-title {
 }
 
 .project-card:hover { border-color: var(--border2); background: var(--bg3); }
-.project-card:hover::before { background: var(--green); }
-.project-card.amber:hover::before { background: var(--amber); }
-.project-card.blue:hover::before { background: var(--blue); }
+.project-card:hover::before { background: var(--accent); }
+
+
 
 .project-tag {
   font-family: var(--mono);
@@ -374,22 +370,14 @@ h2.section-title {
   letter-spacing: 0.05em;
   padding: 3px 8px;
   border-radius: 2px;
-  border: 1px solid var(--green-border);
-  color: var(--green);
-  background: var(--green-dim);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-dim);
 }
 
-.metric-tag.amber {
-  border-color: rgba(251,191,36,0.25);
-  color: var(--amber);
-  background: var(--amber-dim);
-}
 
-.metric-tag.blue {
-  border-color: rgba(96,165,250,0.25);
-  color: var(--blue);
-  background: var(--blue-dim);
-}
+
+
 
 .project-tools {
   font-family: var(--mono);
@@ -409,7 +397,7 @@ h2.section-title {
   transition: color 0.2s;
 }
 
-.project-link:hover { color: var(--green); }
+.project-link:hover { color: var(--accent); }
 
 /* ── SKILLS ── */
 .skills-grid {
@@ -430,7 +418,7 @@ h2.section-title {
   font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--accent);
   margin-bottom: 16px;
 }
 
@@ -547,20 +535,20 @@ footer {
   </p>
 
   <div class="hero-chips fade-up">
-    <span class="chip green">TSMC 40nm Tapeout</span>
-    <span class="chip green">Genus · Innovus</span>
-    <span class="chip green">STA · CTS · PPA</span>
+    <span class="chip accent">TSMC 40nm Tapeout</span>
+    <span class="chip accent">Genus · Innovus</span>
+    <span class="chip accent">STA · CTS · PPA</span>
     <span class="chip">RISC-V</span>
     <span class="chip">SystemVerilog</span>
     <span class="chip">Cadence Suite</span>
-    <span class="chip amber">IEEE Published</span>
-    <span class="chip blue">UPenn SEAS</span>
+    <span class="chip">IEEE Published</span>
+    <span class="chip">UPenn SEAS</span>
   </div>
 
   <div class="hero-links fade-up">
     <a href="mailto:patel5@seas.upenn.edu" class="btn primary">patel5@seas.upenn.edu</a>
-    <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
-    <a href="https://github.com/devanship30" target="_blank" class="btn">GitHub</a>
+    <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn primary">LinkedIn</a>
+    <a href="https://github.com/devanship30" target="_blank" class="btn primary">GitHub</a>
   </div>
 </section>
 
@@ -642,26 +630,26 @@ footer {
       <div class="project-tools">SystemVerilog · Xilinx Vivado · Zybo Z7-20</div>
     </div>
 
-    <div class="project-card amber">
+    <div class="project-card">
       <div class="project-tag">Memory Design · Cadence</div>
       <div class="project-name">6T SRAM Memory Array (16×4)</div>
       <div class="project-desc">Differential bit-line SRAM (VDD ≈ 1.2 V) with transistor sizing for read stability (SNM) and write margin. Designed periphery including precharge, tri-state drivers, and NAND-based 4×16 row decoder.</div>
       <div class="project-metrics">
-        <span class="metric-tag amber">40.2% delay reduction</span>
-        <span class="metric-tag amber">23.2% power reduction</span>
-        <span class="metric-tag amber">54.19% FOM improvement</span>
+        <span class="metric-tag">40.2% delay reduction</span>
+        <span class="metric-tag">23.2% power reduction</span>
+        <span class="metric-tag">54.19% FOM improvement</span>
       </div>
       <div class="project-tools">Cadence Virtuoso · 45nm</div>
     </div>
 
-    <div class="project-card amber">
+    <div class="project-card">
       <div class="project-tag">Emerging Memory · NVM</div>
       <div class="project-name">RRAM & STT-MRAM Characterization</div>
       <div class="project-desc">Bit-cell and 32-bit array-level comparative analysis of RRAM and STT-MRAM using Verilog-A compact models. Designed voltage-mode and current-mode sense amplifiers; characterized switching delay, read latency, and write energy.</div>
       <div class="project-metrics">
-        <span class="metric-tag amber">STT-MRAM 31× lower write energy (1-bit)</span>
-        <span class="metric-tag amber">158× lower at 32-bit array</span>
-        <span class="metric-tag amber">Sub-10 ns latencies</span>
+        <span class="metric-tag">STT-MRAM 31× lower write energy (1-bit)</span>
+        <span class="metric-tag">158× lower at 32-bit array</span>
+        <span class="metric-tag">Sub-10 ns latencies</span>
       </div>
       <div class="project-tools">Cadence Virtuoso · Verilog-A · Spectre</div>
     </div>
@@ -757,8 +745,8 @@ footer {
   <p class="contact-tagline">Open to Summer 2026 internships in ASIC design, physical design, and digital RTL.</p>
   <div class="contact-links">
     <a href="mailto:patel5@seas.upenn.edu" class="btn primary">patel5@seas.upenn.edu</a>
-    <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
-    <a href="https://github.com/devanship30" target="_blank" class="btn">GitHub</a>
+    <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn primary">LinkedIn</a>
+    <a href="https://github.com/devanship30" target="_blank" class="btn primary">GitHub</a>
   </div>
 </section>
 
