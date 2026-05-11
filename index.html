@@ -66,9 +66,8 @@ h1.hero-name em { font-style: italic; color: var(--accent); }
 .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 20px; border: 1px solid var(--accent-border); border-radius: 2px; color: var(--accent); background: var(--accent-dim); transition: all 0.2s; }
 .btn:hover { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
 
-.hero-chip { flex-shrink: 0; opacity: 0; animation: fadeUp 0.6s ease 0.5s forwards; }
-@keyframes chipPulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
-.chip-pulse { animation: chipPulse 2.5s ease-in-out infinite; }
+
+
 
 .pcb-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; height: 24px; opacity: 0.22; }
 .pcb-line { height: 1px; background: var(--accent); flex: 1; }
@@ -129,14 +128,14 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
-@media (max-width: 900px) { #hero { flex-direction: column; gap: 48px; padding-top: 100px; } .hero-chip { display: none; } .stats-bar { flex-wrap: wrap; } .stat-item { flex: 1 1 40%; } }
+@media (max-width: 900px) { #hero { flex-direction: column; gap: 48px; padding-top: 100px; }  .stats-bar { flex-wrap: wrap; } .stat-item { flex: 1 1 40%; } }
 @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { display: none; } section { padding: 60px 20px; } .pcb-divider { padding: 0 20px; } #hero { padding: 100px 20px 60px; } .timeline { padding-left: 24px; } .timeline-dot { left: -30px; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">dp // asic</span>
+  <span class="nav-logo">dp.</span>
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -167,60 +166,6 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
       <a href="https://github.com/devanship30" target="_blank" class="btn">GitHub</a>
     </div>
-  </div>
-
-  <div class="hero-chip">
-    <svg width="260" height="320" viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="50" y="50" width="160" height="220" rx="4" stroke="#3b82f6" stroke-width="1.5" fill="rgba(59,130,246,0.04)"/>
-      <rect x="70" y="70" width="120" height="180" rx="2" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="3 2" fill="rgba(59,130,246,0.02)" class="chip-pulse"/>
-      <rect x="80" y="42" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="98" y="42" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="116" y="42" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="134" y="42" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="152" y="42" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="170" y="42" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="80" y="266" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="98" y="266" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="116" y="266" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="134" y="266" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="152" y="266" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="170" y="266" width="8" height="12" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="80" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="100" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="120" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="140" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="160" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="180" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="200" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="220" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="38" y="240" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="80" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="100" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="120" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="140" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="160" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="180" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="200" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="220" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="206" y="240" width="16" height="8" fill="#3b82f6" opacity="0.7"/>
-      <rect x="80" y="80" width="50" height="36" rx="1" stroke="#3b82f6" stroke-width="0.75" fill="rgba(59,130,246,0.05)"/>
-      <text x="105" y="102" font-size="7" text-anchor="middle" fill="#3b82f6" opacity="0.8" font-family="monospace">CPU</text>
-      <rect x="140" y="80" width="40" height="36" rx="1" stroke="#3b82f6" stroke-width="0.75" fill="rgba(59,130,246,0.05)"/>
-      <text x="160" y="102" font-size="7" text-anchor="middle" fill="#3b82f6" opacity="0.8" font-family="monospace">CACHE</text>
-      <rect x="80" y="126" width="100" height="24" rx="1" stroke="#3b82f6" stroke-width="0.75" fill="rgba(59,130,246,0.05)"/>
-      <text x="130" y="142" font-size="7" text-anchor="middle" fill="#3b82f6" opacity="0.8" font-family="monospace">AXI-LITE BUS</text>
-      <rect x="80" y="160" width="44" height="30" rx="1" stroke="#3b82f6" stroke-width="0.75" fill="rgba(59,130,246,0.05)"/>
-      <text x="102" y="179" font-size="7" text-anchor="middle" fill="#3b82f6" opacity="0.8" font-family="monospace">SRAM</text>
-      <rect x="134" y="160" width="46" height="30" rx="1" stroke="#3b82f6" stroke-width="0.75" fill="rgba(59,130,246,0.05)"/>
-      <text x="157" y="179" font-size="7" text-anchor="middle" fill="#3b82f6" opacity="0.8" font-family="monospace">PERIPH</text>
-      <rect x="80" y="200" width="100" height="40" rx="1" stroke="#3b82f6" stroke-width="1" fill="rgba(59,130,246,0.07)" class="chip-pulse"/>
-      <text x="130" y="217" font-size="8" text-anchor="middle" fill="#3b82f6" opacity="1" font-family="monospace" font-weight="500">RISC-V</text>
-      <text x="130" y="231" font-size="6" text-anchor="middle" fill="#3b82f6" opacity="0.6" font-family="monospace">TSMC 40nm PDK</text>
-      <path d="M50 62 L50 50 L62 50" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-      <path d="M198 50 L210 50 L210 62" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-      <path d="M50 258 L50 270 L62 270" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-      <path d="M198 270 L210 270 L210 258" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-    </svg>
   </div>
 </section>
 
@@ -449,6 +394,177 @@ function type(){
   setTimeout(type,del?40:70);
 }
 setTimeout(type,900);
+</script>
+
+<canvas id="bg-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.22;"></canvas>
+<script>
+(function(){
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, wires = [];
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    buildWires();
+  }
+
+  // Build a network of orthogonal (right-angle) wire paths across the canvas
+  function buildWires(){
+    wires = [];
+    const GRID = 40; // snap to grid
+    const count = 28;
+
+    for(let i = 0; i < count; i++){
+      // random start on left or top edge
+      const fromEdge = Math.random() < 0.5 ? 'left' : 'top';
+      let sx, sy;
+      if(fromEdge === 'left'){
+        sx = 0;
+        sy = Math.round((Math.random() * H) / GRID) * GRID;
+      } else {
+        sx = Math.round((Math.random() * W) / GRID) * GRID;
+        sy = 0;
+      }
+
+      // build 2-4 orthogonal segments
+      const points = [{x: sx, y: sy}];
+      let cx = sx, cy = sy;
+      const segs = 2 + Math.floor(Math.random() * 3);
+      let lastDir = fromEdge === 'left' ? 'h' : 'v';
+
+      for(let s = 0; s < segs; s++){
+        const len = (3 + Math.floor(Math.random() * 8)) * GRID;
+        if(lastDir === 'h'){
+          cy = Math.round((cy + (Math.random() < 0.5 ? len : -len)) / GRID) * GRID;
+          cy = Math.max(0, Math.min(H, cy));
+          lastDir = 'v';
+        } else {
+          cx = Math.round((cx + len) / GRID) * GRID;
+          cx = Math.max(0, Math.min(W, cx));
+          lastDir = 'h';
+        }
+        points.push({x: cx, y: cy});
+      }
+      // extend to right/bottom edge
+      if(lastDir === 'h'){
+        points.push({x: W, y: cy});
+      } else {
+        points.push({x: cx, y: H});
+      }
+
+      // calculate total length for signal travel
+      let totalLen = 0;
+      for(let p = 1; p < points.length; p++){
+        totalLen += Math.abs(points[p].x - points[p-1].x) + Math.abs(points[p].y - points[p-1].y);
+      }
+
+      wires.push({
+        points,
+        totalLen,
+        speed: 60 + Math.random() * 120, // px/sec
+        signalPos: Math.random() * totalLen, // current signal position
+        signalLen: 80 + Math.random() * 120,
+        width: 0.5 + Math.random() * 0.8,
+        vias: generateVias(points), // corner via pads
+      });
+    }
+  }
+
+  function generateVias(points){
+    // vias at each corner (not start/end)
+    return points.slice(1, -1).map(p => ({x: p.x, y: p.y}));
+  }
+
+  // Given a distance along the wire, return {x, y}
+  function posAlongWire(points, dist){
+    let remaining = dist;
+    for(let i = 1; i < points.length; i++){
+      const dx = points[i].x - points[i-1].x;
+      const dy = points[i].y - points[i-1].y;
+      const segLen = Math.abs(dx) + Math.abs(dy);
+      if(remaining <= segLen){
+        const t = remaining / segLen;
+        return {x: points[i-1].x + dx * t, y: points[i-1].y + dy * t};
+      }
+      remaining -= segLen;
+    }
+    return points[points.length - 1];
+  }
+
+  let last = 0;
+  function draw(ts){
+    const dt = Math.min((ts - last) / 1000, 0.05);
+    last = ts;
+    ctx.clearRect(0, 0, W, H);
+
+    for(const wire of wires){
+      const pts = wire.points;
+
+      // draw static wire (dim)
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for(let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+      ctx.strokeStyle = 'rgba(59,130,246,0.12)';
+      ctx.lineWidth = wire.width;
+      ctx.stroke();
+
+      // draw vias (corner pads)
+      for(const v of wire.vias){
+        ctx.beginPath();
+        ctx.arc(v.x, v.y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59,130,246,0.25)';
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(v.x, v.y, 1, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(140,190,255,0.5)';
+        ctx.fill();
+      }
+
+      // advance signal
+      wire.signalPos = (wire.signalPos + wire.speed * dt) % wire.totalLen;
+
+      // draw glowing signal pulse
+      const head = wire.signalPos;
+      const tail = Math.max(0, head - wire.signalLen);
+      const steps = Math.ceil(wire.signalLen / 3);
+
+      for(let s = 0; s <= steps; s++){
+        const d = tail + (head - tail) * (s / steps);
+        if(d < 0 || d > wire.totalLen) continue;
+        const p = posAlongWire(pts, d);
+        const t = s / steps; // 0=tail, 1=head
+        const alpha = t * t; // fade toward tail
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, wire.width * 1.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(59,130,246,${alpha * 0.6})`;
+        ctx.fill();
+      }
+
+      // bright head dot with glow
+      const headPos = posAlongWire(pts, head);
+      const grd = ctx.createRadialGradient(headPos.x, headPos.y, 0, headPos.x, headPos.y, 8);
+      grd.addColorStop(0, 'rgba(200,225,255,1)');
+      grd.addColorStop(0.3, 'rgba(59,130,246,0.8)');
+      grd.addColorStop(1, 'rgba(59,130,246,0)');
+      ctx.beginPath();
+      ctx.arc(headPos.x, headPos.y, 8, 0, Math.PI * 2);
+      ctx.fillStyle = grd;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(headPos.x, headPos.y, 1.5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(220,240,255,1)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(draw);
+})();
 </script>
 </body>
 </html>
