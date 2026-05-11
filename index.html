@@ -38,7 +38,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .nav-links a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text2); transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
 
-#hero { min-height: 100vh; display: flex; align-items: center; padding: 80px 48px; max-width: 1200px; margin: 0 auto; gap: 80px; }
+#hero { min-height: 100vh; display: flex; align-items: center; padding: 80px 48px; max-width: 1200px; margin: 0 auto; gap: 80px; position: relative; z-index: 1; }
 .hero-left { flex: 1; }
 
 .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; opacity: 0; animation: fadeUp 0.5s ease 0.1s forwards; }
@@ -75,7 +75,8 @@ h1.hero-name em { font-style: italic; color: var(--accent); }
 .pcb-pad { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 .pcb-via { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--accent); background: transparent; flex-shrink: 0; }
 
-section { max-width: 1200px; margin: 0 auto; padding: 90px 48px; }
+section { max-width: 1200px; margin: 0 auto; padding: 90px 48px; position: relative; z-index: 1; }
+section::before { content: ''; position: absolute; inset: 0; background: rgba(7,9,10,0.82); z-index: -1; pointer-events: none; }
 
 .section-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
 .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--accent); opacity: 0.35; }
@@ -139,12 +140,17 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section id="hero" style="border:none; padding-top:80px;">
+  <div class="hero-photo-wrap" style="display:flex;align-items:flex-start;gap:24px;margin-bottom:28px;">
+    <!-- Replace src below with your actual photo URL once uploaded to GitHub repo -->
+    <img src="photo.jpg" alt="Devanshi Patel" onerror="this.style.display='none'" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--accent-border);flex-shrink:0;margin-top:4px;">
+  </div>
   <div class="hero-left">
     <div class="hero-eyebrow">MSE Electrical Engineering · UPenn SEAS · Class of 2027</div>
     <h1 class="hero-name">Devanshi<br><em>Patel</em><span class="hero-cursor"></span></h1>
@@ -315,6 +321,47 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 </section>
 
 <div class="pcb-divider">
+  <div class="pcb-pad"></div><div class="pcb-line" style="flex:0.3"></div><div class="pcb-via"></div><div class="pcb-line"></div><div class="pcb-pad"></div><div class="pcb-line"></div><div class="pcb-via"></div><div class="pcb-line" style="flex:0.3"></div><div class="pcb-pad"></div>
+</div>
+
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">Academic background</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot active"></div>
+      <div class="timeline-header">
+        <div class="timeline-role">Master of Science in Electrical Engineering</div>
+        <div class="timeline-date">Aug 2025 — May 2027</div>
+      </div>
+      <div class="timeline-place">University of Pennsylvania (UPenn SEAS)</div>
+      <ul class="timeline-bullets">
+        <li>Specialization: Digital VLSI Design, Computer Organization & Design, Semiconductor Memory Design</li>
+        <li>Graduate Research Assistant — Miskin Lab (neuromorphic hardware and analog ML inference)</li>
+        <li>Running RISC-V SoC tapeout on TSMC 40nm as part of graduate hardware design project</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-header">
+        <div class="timeline-role">B.Tech in Information and Communication Technology (EE)</div>
+        <div class="timeline-date">July 2021 — May 2025</div>
+      </div>
+      <div class="timeline-place">Pandit Deendayal Energy University (PDEU)</div>
+      <ul class="timeline-bullets">
+        <li>GPA: 3.91 / 4.00</li>
+        <li>Treasurer, Alchemy – The Chemistry Club of PDEU (2023–2024)</li>
+        <li>Event Management Head, Alchemy (2022–2023) · Event Management Member, Society of Mathematics (2022–2023)</li>
+        <li>Published IEEE SETCOM 2025 paper on optimized carry select adder design</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="pcb-divider">
   <div class="pcb-pad"></div><div class="pcb-line"></div><div class="pcb-via"></div><div class="pcb-line" style="flex:0.5"></div><div class="pcb-pad"></div><div class="pcb-line" style="flex:0.5"></div><div class="pcb-via"></div><div class="pcb-line"></div><div class="pcb-pad"></div>
 </div>
 
@@ -375,6 +422,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     <a href="mailto:patel5@seas.upenn.edu" class="btn">patel5@seas.upenn.edu</a>
     <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
     <a href="https://github.com/devanship30" target="_blank" class="btn">GitHub</a>
+    <a href="Devanshi_s_Resume.pdf" download class="btn" style="border-color:rgba(255,255,255,0.2);color:var(--text2);">↓ Resume</a>
   </div>
 </section>
 
@@ -396,100 +444,140 @@ function type(){
 setTimeout(type,900);
 </script>
 
-<canvas id="bg-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.22;"></canvas>
+<canvas id="bg-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
 <script>
 (function(){
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
-  let W, H, wires = [];
+  let W, H, nets = [], pads = [];
+  const GRID = 24;
+  const TRACE_COLOR = 'rgba(59,130,246,';
+  const PAD_COLOR = 'rgba(100,160,255,';
+
+  function snap(v){ return Math.round(v / GRID) * GRID; }
 
   function resize(){
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
-    buildWires();
+    build();
   }
 
-  // Build a network of orthogonal (right-angle) wire paths across the canvas
-  function buildWires(){
-    wires = [];
-    const GRID = 40; // snap to grid
-    const count = 28;
+  function build(){
+    nets = [];
+    pads = [];
 
-    for(let i = 0; i < count; i++){
-      // random start on left or top edge
-      const fromEdge = Math.random() < 0.5 ? 'left' : 'top';
-      let sx, sy;
-      if(fromEdge === 'left'){
-        sx = 0;
-        sy = Math.round((Math.random() * H) / GRID) * GRID;
-      } else {
-        sx = Math.round((Math.random() * W) / GRID) * GRID;
-        sy = 0;
-      }
-
-      // build 2-4 orthogonal segments
-      const points = [{x: sx, y: sy}];
-      let cx = sx, cy = sy;
-      const segs = 2 + Math.floor(Math.random() * 3);
-      let lastDir = fromEdge === 'left' ? 'h' : 'v';
-
-      for(let s = 0; s < segs; s++){
-        const len = (3 + Math.floor(Math.random() * 8)) * GRID;
-        if(lastDir === 'h'){
-          cy = Math.round((cy + (Math.random() < 0.5 ? len : -len)) / GRID) * GRID;
-          cy = Math.max(0, Math.min(H, cy));
-          lastDir = 'v';
-        } else {
-          cx = Math.round((cx + len) / GRID) * GRID;
-          cx = Math.max(0, Math.min(W, cx));
-          lastDir = 'h';
+    // Build dense PCB-like routing
+    // Horizontal bus groups
+    const hBuses = 6;
+    for(let b = 0; b < hBuses; b++){
+      const baseY = snap(H * (0.1 + b * 0.15));
+      const tracesInBus = 3 + Math.floor(Math.random() * 4);
+      for(let t = 0; t < tracesInBus; t++){
+        const y = baseY + t * GRID;
+        if(y > H) continue;
+        const startX = snap(Math.random() * W * 0.3);
+        const endX = snap(startX + W * (0.3 + Math.random() * 0.5));
+        
+        // Add bends
+        const pts = [{x: startX, y}];
+        let cx = startX;
+        
+        // Random via/bend points
+        const bends = Math.floor(Math.random() * 3);
+        for(let i = 0; i < bends; i++){
+          const nx = snap(cx + GRID * (4 + Math.floor(Math.random() * 8)));
+          if(nx >= endX) break;
+          const ny = snap(y + GRID * (Math.random() < 0.5 ? 2 : -2));
+          pts.push({x: nx, y});
+          pts.push({x: nx, y: ny});
+          cx = nx;
+          // Continue horizontally at new y
+          const ex = snap(cx + GRID * (3 + Math.floor(Math.random() * 6)));
+          pts.push({x: ex, y: ny});
+          pts.push({x: ex, y});
+          cx = ex;
         }
-        points.push({x: cx, y: cy});
-      }
-      // extend to right/bottom edge
-      if(lastDir === 'h'){
-        points.push({x: W, y: cy});
-      } else {
-        points.push({x: cx, y: H});
-      }
+        pts.push({x: Math.min(endX, W), y});
 
-      // calculate total length for signal travel
-      let totalLen = 0;
-      for(let p = 1; p < points.length; p++){
-        totalLen += Math.abs(points[p].x - points[p-1].x) + Math.abs(points[p].y - points[p-1].y);
-      }
+        // Add pad at start
+        pads.push({x: startX, y, r: 4});
+        // Vias at bends
+        for(let i = 1; i < pts.length - 1; i++){
+          if(pts[i].x !== pts[i-1].x && pts[i].y !== pts[i-1].y) continue;
+          if(i % 2 === 0) pads.push({x: pts[i].x, y: pts[i].y, r: 3, via: true});
+        }
 
-      wires.push({
-        points,
-        totalLen,
-        speed: 60 + Math.random() * 120, // px/sec
-        signalPos: Math.random() * totalLen, // current signal position
-        signalLen: 80 + Math.random() * 120,
-        width: 0.5 + Math.random() * 0.8,
-        vias: generateVias(points), // corner via pads
+        let totalLen = 0;
+        for(let i = 1; i < pts.length; i++){
+          totalLen += Math.abs(pts[i].x - pts[i-1].x) + Math.abs(pts[i].y - pts[i-1].y);
+        }
+        if(totalLen < 10) continue;
+
+        nets.push({
+          pts,
+          totalLen,
+          pos: Math.random() * totalLen,
+          speed: 40 + Math.random() * 80,
+          sigLen: 60 + Math.random() * 100,
+          w: 0.7 + Math.random() * 0.5,
+          active: Math.random() > 0.3,
+        });
+      }
+    }
+
+    // Vertical bus groups
+    const vBuses = 5;
+    for(let b = 0; b < vBuses; b++){
+      const baseX = snap(W * (0.1 + b * 0.18));
+      const tracesInBus = 2 + Math.floor(Math.random() * 3);
+      for(let t = 0; t < tracesInBus; t++){
+        const x = baseX + t * GRID;
+        if(x > W) continue;
+        const startY = snap(Math.random() * H * 0.3);
+        const endY = snap(startY + H * (0.2 + Math.random() * 0.5));
+        const pts = [{x, y: startY}, {x, y: Math.min(endY, H)}];
+        let totalLen = Math.abs(pts[1].y - pts[0].y);
+        if(totalLen < 10) continue;
+
+        pads.push({x, y: startY, r: 3, via: true});
+
+        nets.push({
+          pts,
+          totalLen,
+          pos: Math.random() * totalLen,
+          speed: 30 + Math.random() * 60,
+          sigLen: 40 + Math.random() * 80,
+          w: 0.5 + Math.random() * 0.4,
+          active: Math.random() > 0.4,
+        });
+      }
+    }
+
+    // Large component pads
+    const compCount = 8 + Math.floor(Math.random() * 6);
+    for(let i = 0; i < compCount; i++){
+      pads.push({
+        x: snap(Math.random() * W),
+        y: snap(Math.random() * H),
+        r: 6 + Math.random() * 4,
+        comp: true
       });
     }
   }
 
-  function generateVias(points){
-    // vias at each corner (not start/end)
-    return points.slice(1, -1).map(p => ({x: p.x, y: p.y}));
-  }
-
-  // Given a distance along the wire, return {x, y}
-  function posAlongWire(points, dist){
-    let remaining = dist;
-    for(let i = 1; i < points.length; i++){
-      const dx = points[i].x - points[i-1].x;
-      const dy = points[i].y - points[i-1].y;
-      const segLen = Math.abs(dx) + Math.abs(dy);
-      if(remaining <= segLen){
-        const t = remaining / segLen;
-        return {x: points[i-1].x + dx * t, y: points[i-1].y + dy * t};
+  function posAlong(pts, dist){
+    let r = dist;
+    for(let i = 1; i < pts.length; i++){
+      const dx = pts[i].x - pts[i-1].x;
+      const dy = pts[i].y - pts[i-1].y;
+      const len = Math.abs(dx) + Math.abs(dy);
+      if(r <= len){
+        const t = r / len;
+        return {x: pts[i-1].x + dx * t, y: pts[i-1].y + dy * t};
       }
-      remaining -= segLen;
+      r -= len;
     }
-    return points[points.length - 1];
+    return pts[pts.length - 1];
   }
 
   let last = 0;
@@ -498,66 +586,83 @@ setTimeout(type,900);
     last = ts;
     ctx.clearRect(0, 0, W, H);
 
-    for(const wire of wires){
-      const pts = wire.points;
-
-      // draw static wire (dim)
+    // Static traces
+    for(const net of nets){
       ctx.beginPath();
-      ctx.moveTo(pts[0].x, pts[0].y);
-      for(let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
-      ctx.strokeStyle = 'rgba(59,130,246,0.12)';
-      ctx.lineWidth = wire.width;
+      ctx.moveTo(net.pts[0].x, net.pts[0].y);
+      for(let i = 1; i < net.pts.length; i++) ctx.lineTo(net.pts[i].x, net.pts[i].y);
+      ctx.strokeStyle = TRACE_COLOR + '0.08)';
+      ctx.lineWidth = net.w;
       ctx.stroke();
+    }
 
-      // draw vias (corner pads)
-      for(const v of wire.vias){
+    // Pads and vias
+    for(const pad of pads){
+      if(pad.comp){
+        // Square component pad
+        ctx.strokeStyle = PAD_COLOR + '0.2)';
+        ctx.lineWidth = 0.5;
+        ctx.strokeRect(pad.x - pad.r, pad.y - pad.r, pad.r * 2, pad.r * 2);
+        ctx.fillStyle = PAD_COLOR + '0.05)';
+        ctx.fillRect(pad.x - pad.r, pad.y - pad.r, pad.r * 2, pad.r * 2);
+      } else if(pad.via){
+        // Via — ring
         ctx.beginPath();
-        ctx.arc(v.x, v.y, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(59,130,246,0.25)';
+        ctx.arc(pad.x, pad.y, pad.r, 0, Math.PI * 2);
+        ctx.strokeStyle = PAD_COLOR + '0.3)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(pad.x, pad.y, pad.r * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = PAD_COLOR + '0.4)';
+        ctx.fill();
+      } else {
+        // Round pad
+        ctx.beginPath();
+        ctx.arc(pad.x, pad.y, pad.r, 0, Math.PI * 2);
+        ctx.fillStyle = PAD_COLOR + '0.15)';
         ctx.fill();
         ctx.beginPath();
-        ctx.arc(v.x, v.y, 1, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(140,190,255,0.5)';
+        ctx.arc(pad.x, pad.y, pad.r * 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = PAD_COLOR + '0.35)';
         ctx.fill();
       }
+    }
 
-      // advance signal
-      wire.signalPos = (wire.signalPos + wire.speed * dt) % wire.totalLen;
+    // Signal pulses
+    for(const net of nets){
+      if(!net.active) continue;
+      net.pos = (net.pos + net.speed * dt) % net.totalLen;
 
-      // draw glowing signal pulse
-      const head = wire.signalPos;
-      const tail = Math.max(0, head - wire.signalLen);
-      const steps = Math.ceil(wire.signalLen / 3);
-
+      const head = net.pos;
+      const steps = 20;
       for(let s = 0; s <= steps; s++){
-        const d = tail + (head - tail) * (s / steps);
-        if(d < 0 || d > wire.totalLen) continue;
-        const p = posAlongWire(pts, d);
-        const t = s / steps; // 0=tail, 1=head
-        const alpha = t * t; // fade toward tail
-
+        const d = head - net.sigLen * (1 - s / steps);
+        if(d < 0 || d > net.totalLen) continue;
+        const p = posAlong(net.pts, d);
+        const t = s / steps;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, wire.width * 1.2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(59,130,246,${alpha * 0.6})`;
+        ctx.arc(p.x, p.y, net.w * 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = TRACE_COLOR + (t * t * 0.7) + ')';
         ctx.fill();
       }
 
-      // bright head dot with glow
-      const headPos = posAlongWire(pts, head);
-      const grd = ctx.createRadialGradient(headPos.x, headPos.y, 0, headPos.x, headPos.y, 8);
-      grd.addColorStop(0, 'rgba(200,225,255,1)');
-      grd.addColorStop(0.3, 'rgba(59,130,246,0.8)');
-      grd.addColorStop(1, 'rgba(59,130,246,0)');
+      // Bright head
+      const hp = posAlong(net.pts, head);
+      const g = ctx.createRadialGradient(hp.x, hp.y, 0, hp.x, hp.y, 7);
+      g.addColorStop(0, 'rgba(200,225,255,1)');
+      g.addColorStop(0.4, 'rgba(59,130,246,0.7)');
+      g.addColorStop(1, 'rgba(59,130,246,0)');
       ctx.beginPath();
-      ctx.arc(headPos.x, headPos.y, 8, 0, Math.PI * 2);
-      ctx.fillStyle = grd;
+      ctx.arc(hp.x, hp.y, 7, 0, Math.PI * 2);
+      ctx.fillStyle = g;
       ctx.fill();
-
       ctx.beginPath();
-      ctx.arc(headPos.x, headPos.y, 1.5, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(220,240,255,1)';
+      ctx.arc(hp.x, hp.y, 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(230,245,255,1)';
       ctx.fill();
     }
+
     requestAnimationFrame(draw);
   }
 
