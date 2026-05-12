@@ -6,7 +6,7 @@
 <meta name="description" content="Devanshi Patel — MSE EE at UPenn | ASIC Design, Physical Design, RTL, Digital VLSI | RISC-V Tapeout TSMC 40nm | Seeking Summer 2026 Internship">
 <title>Devanshi Patel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -24,64 +24,60 @@
   --accent-glow: rgba(59,130,246,0.15);
   --mono: 'DM Mono', monospace;
   --serif: 'Instrument Serif', serif;
-  --sans: 'DM Sans', sans-serif;
 }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; font-size: 15px; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font-family: var(--mono); font-weight: 300; line-height: 1.7; font-size: 15px; overflow-x: hidden; }
 body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.5; }
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--accent); }
 
+/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 56px; background: rgba(7,9,10,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-left { display: flex; align-items: center; gap: 18px; }
 .nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.05em; }
+.nav-status { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 2px; padding: 4px 10px; line-height: 1; }
+.nav-status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text2); transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
 
+/* HERO */
 #hero { min-height: 100vh; display: flex; align-items: center; padding: 80px 48px; max-width: 1200px; margin: 0 auto; gap: 80px; position: relative; z-index: 1; }
 .hero-left { flex: 1; }
-
 .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; opacity: 0; animation: fadeUp 0.5s ease 0.1s forwards; }
 .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); opacity: 0.5; }
-
 h1.hero-name { font-family: var(--serif); font-size: clamp(48px, 7vw, 88px); font-weight: 400; line-height: 1.0; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; opacity: 0; animation: fadeUp 0.5s ease 0.2s forwards; }
 h1.hero-name em { font-style: italic; color: var(--accent); }
-
 .hero-cursor { display: inline-block; width: 3px; height: 0.85em; background: var(--accent); margin-left: 4px; vertical-align: middle; animation: blink 1s step-end infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
 .hero-typing-wrap { font-family: var(--mono); font-size: 13px; color: var(--text2); margin-bottom: 32px; letter-spacing: 0.05em; min-height: 22px; opacity: 0; animation: fadeUp 0.5s ease 0.3s forwards; }
 .hero-typing { color: var(--accent); }
-
-.hero-desc { max-width: 520px; font-size: 15px; color: var(--text2); line-height: 1.85; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.5s ease 0.4s forwards; }
-.hero-desc strong { color: var(--text); font-weight: 400; }
-
+.hero-desc { max-width: 520px; font-family: var(--mono); font-size: 13px; color: var(--text2); line-height: 1.9; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.5s ease 0.4s forwards; }
+.hero-desc strong { color: var(--text); font-weight: 500; }
 .stats-bar { display: flex; border: 1px solid var(--border2); border-radius: 4px; overflow: hidden; margin-bottom: 36px; opacity: 0; animation: fadeUp 0.5s ease 0.5s forwards; }
 .stat-item { flex: 1; padding: 14px 20px; border-right: 1px solid var(--border); background: var(--bg2); }
 .stat-item:last-child { border-right: none; }
 .stat-val { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); display: block; margin-bottom: 3px; }
 .stat-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); }
-
 .hero-links { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.5s ease 0.6s forwards; }
 .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 20px; border: 1px solid var(--accent-border); border-radius: 2px; color: var(--accent); background: var(--accent-dim); transition: all 0.2s; }
 .btn:hover { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
 
-
-
-
+/* PCB DIVIDER */
 .pcb-divider { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; height: 24px; opacity: 0.22; }
 .pcb-line { height: 1px; background: var(--accent); flex: 1; }
-.pcb-line-short { height: 1px; background: var(--accent); flex: 0.2; }
 .pcb-pad { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 .pcb-via { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--accent); background: transparent; flex-shrink: 0; }
 
+/* SECTIONS */
 section { max-width: 1200px; margin: 0 auto; padding: 90px 48px; position: relative; z-index: 1; }
 section::before { content: ''; position: absolute; inset: 0; background: rgba(7,9,10,0.82); z-index: -1; pointer-events: none; }
-
 .section-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
 .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--accent); opacity: 0.35; }
-h2.section-title { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 42px); font-weight: 400; color: var(--text); margin-bottom: 52px; letter-spacing: -0.01em; }
+h2.section-title { font-family: var(--mono); font-size: clamp(22px, 3vw, 36px); font-weight: 500; color: var(--text); margin-bottom: 52px; letter-spacing: -0.02em; }
 
+/* TIMELINE */
 .timeline { position: relative; padding-left: 36px; }
 .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(to bottom, var(--accent) 60%, transparent); opacity: 0.25; }
 .timeline-item { position: relative; margin-bottom: 52px; }
@@ -89,21 +85,22 @@ h2.section-title { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 42px
 .timeline-dot { position: absolute; left: -42px; top: 6px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--accent); background: var(--bg); }
 .timeline-dot.active { background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
 .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; gap: 20px; }
-.timeline-role { font-size: 15px; font-weight: 500; color: var(--text); }
+.timeline-role { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--text); }
 .timeline-date { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.1em; white-space: nowrap; padding-top: 3px; }
 .timeline-place { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-bottom: 14px; letter-spacing: 0.05em; }
 .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-.timeline-bullets li { font-size: 13px; color: var(--text2); padding-left: 16px; position: relative; line-height: 1.6; }
-.timeline-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--text3); font-family: var(--mono); }
+.timeline-bullets li { font-family: var(--mono); font-size: 12px; color: var(--text2); padding-left: 16px; position: relative; line-height: 1.7; }
+.timeline-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--text3); }
 
+/* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 3px; }
 .project-card { padding: 32px 36px 28px; background: var(--bg2); border: 1px solid var(--border); border-top: 3px solid var(--border); display: flex; flex-direction: column; transition: border-color 0.25s, background 0.25s, border-top-color 0.25s; }
 .project-card:hover { border-color: var(--border2); border-top-color: var(--accent); background: var(--bg3); }
 .project-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text3); margin-bottom: 10px; }
-.project-name { font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 18px; line-height: 1.3; }
+.project-name { font-family: var(--mono); font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 18px; line-height: 1.3; letter-spacing: -0.01em; }
 .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; flex: 1; margin-bottom: 20px; }
-.project-bullets li { font-size: 13px; color: var(--text2); line-height: 1.6; padding-left: 16px; position: relative; }
-.project-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--text3); font-family: var(--mono); }
+.project-bullets li { font-family: var(--mono); font-size: 12px; color: var(--text2); line-height: 1.7; padding-left: 16px; position: relative; }
+.project-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--text3); }
 .project-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--border); }
 .project-metrics { display: flex; flex-wrap: wrap; gap: 6px; }
 .metric-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; padding: 4px 10px; border-radius: 2px; border: 1px solid var(--accent-border); color: var(--accent); background: var(--accent-dim); }
@@ -111,17 +108,19 @@ h2.section-title { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 42px
 .project-link { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); opacity: 0.7; transition: opacity 0.2s; }
 .project-link:hover { opacity: 1; }
 
+/* SKILLS */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3px; }
 .skill-group { padding: 28px 32px; background: var(--bg2); border: 1px solid var(--border); }
 .skill-group-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
 .skill-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.skill-list li { font-size: 12px; color: var(--text2); font-family: var(--mono); display: flex; align-items: center; gap: 8px; }
+.skill-list li { font-family: var(--mono); font-size: 12px; color: var(--text2); display: flex; align-items: center; gap: 8px; }
 .skill-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.5; flex-shrink: 0; }
 
+/* CONTACT */
 #contact { text-align: center; }
 #contact .section-label { justify-content: center; }
 #contact .section-label::after { display: none; }
-.contact-tagline { font-family: var(--serif); font-size: clamp(22px, 3.5vw, 38px); font-weight: 400; font-style: italic; color: var(--text2); max-width: 500px; margin: 0 auto 40px; line-height: 1.4; }
+.contact-tagline { font-family: var(--mono); font-size: clamp(15px, 2.2vw, 24px); font-weight: 300; color: var(--text2); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; letter-spacing: -0.01em; }
 .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
 footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
@@ -129,14 +128,20 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
-@media (max-width: 900px) { #hero { flex-direction: column; gap: 48px; padding-top: 100px; }  .stats-bar { flex-wrap: wrap; } .stat-item { flex: 1 1 40%; } }
-@media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { display: none; } section { padding: 60px 20px; } .pcb-divider { padding: 0 20px; } #hero { padding: 100px 20px 60px; } .timeline { padding-left: 24px; } .timeline-dot { left: -30px; } }
+@media (max-width: 900px) { #hero { flex-direction: column; gap: 48px; padding-top: 100px; } .stats-bar { flex-wrap: wrap; } .stat-item { flex: 1 1 40%; } }
+@media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { display: none; } .nav-status-label { display: none; } section { padding: 60px 20px; } .pcb-divider { padding: 0 20px; } #hero { padding: 100px 20px 60px; } .timeline { padding-left: 24px; } .timeline-dot { left: -30px; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">dp.</span>
+  <div class="nav-left">
+    <span class="nav-logo">dp.</span>
+    <span class="nav-status">
+      <span class="nav-status-dot"></span>
+      <span class="nav-status-label">open · summer 2026</span>
+    </span>
+  </div>
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -148,7 +153,6 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 
 <section id="hero" style="border:none; padding-top:80px;">
   <div class="hero-photo-wrap" style="display:flex;align-items:flex-start;gap:24px;margin-bottom:28px;">
-    <!-- Replace src below with your actual photo URL once uploaded to GitHub repo -->
     <img src="photo.jpg" alt="Devanshi Patel" onerror="this.style.display='none'" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--accent-border);flex-shrink:0;margin-top:4px;">
   </div>
   <div class="hero-left">
@@ -159,7 +163,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       Building silicon from <strong>RTL to tapeout</strong>. Currently taping out a
       <strong>RISC-V SoC on TSMC 40nm</strong> at UPenn — full Genus → Innovus flow,
       STA-driven timing closure, and tapeout sign-off. Seeking <strong>Summer 2026</strong>
-      internships in ASIC design, physical design, and digital RTL.
+      internships in digital RTL, ASIC design, and physical design.
     </p>
     <div class="stats-bar">
       <div class="stat-item"><span class="stat-val">TSMC 40nm</span><span class="stat-label">Process Node</span></div>
@@ -187,20 +191,6 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     <div class="timeline-item">
       <div class="timeline-dot active"></div>
       <div class="timeline-header">
-        <div class="timeline-role">Graduate Research Assistant</div>
-        <div class="timeline-date">Feb 2026 — Present</div>
-      </div>
-      <div class="timeline-place">Miskin Lab · University of Pennsylvania</div>
-      <ul class="timeline-bullets">
-        <li>Studying analog and neuromorphic learning frameworks: contrastive local learning and Equilibrium Propagation for hardware-based ML</li>
-        <li>Analyzing nonlinear analog networks using MOSFET-based elements and energy-minimization principles for low-power inference</li>
-        <li>Investigating locally adaptive learning rules for efficient on-chip training without global backpropagation</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot active"></div>
-      <div class="timeline-header">
         <div class="timeline-role">Graduate Research Assistant — RISC-V Chip Tapeout</div>
         <div class="timeline-date">Feb 2026 — Present</div>
       </div>
@@ -211,6 +201,21 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
         <li>Resolved setup/hold violations and achieved full tapeout sign-off through iterative physical design closure</li>
       </ul>
     </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot active"></div>
+      <div class="timeline-header">
+        <div class="timeline-role">Graduate Research Assistant</div>
+        <div class="timeline-date">Feb 2026 — Present</div>
+      </div>
+      <div class="timeline-place">Miskin Lab · University of Pennsylvania</div>
+      <ul class="timeline-bullets">
+        <li>Investigating digital hardware implementations of local learning rules — analyzing compute graphs and memory access patterns for on-chip training accelerator design</li>
+        <li>Studying energy-efficient inference architectures; evaluating hardware cost of eliminating global backpropagation in fixed-function digital datapaths</li>
+        <li>Analyzing scalability of locally adaptive learning rules toward RTL implementation for low-power AI hardware</li>
+      </ul>
+    </div>
+
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-header">
@@ -219,10 +224,11 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       </div>
       <div class="timeline-place">eInfochips</div>
       <ul class="timeline-bullets">
-        <li>Designed and simulated 1-bit Sigma-Delta ADC using MATLAB Simulink, applying noise shaping and feedback techniques</li>
-        <li>Conducted literature survey of ADC architectures; analyzed chip manufacturing data gaining exposure to ASIC design flow</li>
+        <li>Gained exposure to ASIC design flow through literature survey of ADC architectures and analysis of chip manufacturing data across process nodes (&gt;60nm)</li>
+        <li>Designed and simulated a signal conversion pipeline in MATLAB Simulink; developed familiarity with block-level design methodology and verification</li>
       </ul>
     </div>
+
   </div>
 </section>
 
@@ -234,6 +240,25 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
   <div class="section-label">Projects</div>
   <h2 class="section-title">What I've built</h2>
   <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">ASIC · Physical Design · Feb 2026 – Present</div>
+      <div class="project-name">RISC-V SoC Tapeout — TSMC 40nm</div>
+      <ul class="project-bullets">
+        <li>Generated RISC-V SoC RTL via Chipyard (Chisel); authored SDC constraints for multi-corner synthesis on TSMC 40nm PDK</li>
+        <li>Ran complete ASIC flow: logic synthesis (Genus), place-and-route with CTS (Innovus), STA-driven timing closure across synthesis iterations</li>
+        <li>Resolved setup/hold violations through iterative PPA analysis and physical design closure — achieved full tapeout sign-off</li>
+      </ul>
+      <div class="project-footer">
+        <div class="project-metrics">
+          <span class="metric-tag">TSMC 40nm</span>
+          <span class="metric-tag">Full ASIC Flow</span>
+          <span class="metric-tag">Tapeout Sign-off</span>
+          <span class="metric-tag">STA Closed</span>
+        </div>
+        <div class="project-tools">Chipyard · Genus · Innovus · mflowgen · SDC</div>
+      </div>
+    </div>
 
     <div class="project-card">
       <div class="project-tag">RTL · Computer Architecture · Jan 2026 – May 2026</div>
@@ -264,7 +289,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     </div>
 
     <div class="project-card">
-      <div class="project-tag">Memory Design · Cadence · Nov 2025 – Dec 2025</div>
+      <div class="project-tag">Digital Memory Design · Custom Circuit · Nov 2025 – Dec 2025</div>
       <div class="project-name">6T SRAM Memory Array (16×4)</div>
       <ul class="project-bullets">
         <li>Implemented differential bit-line SRAM (VDD ≈ 1.2 V); sized transistors for read stability (SNM) and write margin</li>
@@ -278,12 +303,12 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     </div>
 
     <div class="project-card">
-      <div class="project-tag">Emerging Memory · NVM · April 2026</div>
+      <div class="project-tag">Memory Architecture · Digital Design · April 2026</div>
       <div class="project-name">RRAM &amp; STT-MRAM Characterization</div>
       <ul class="project-bullets">
-        <li>Integrated validated Verilog-A compact models (Stanford RRAM, Beihang STT-MRAM) in Cadence Virtuoso</li>
-        <li>Designed voltage-mode and current-mode sense amplifiers for 1-bit and 32-bit array read/write verification</li>
-        <li>STT-MRAM achieved 31× lower write energy at bit-cell level and 158× lower at 32-bit array vs RRAM; sub-10 ns latencies</li>
+        <li>Designed digital memory interface logic: voltage-mode and current-mode sense amplifiers for 1-bit and 32-bit array read/write; verified functionality across process corners</li>
+        <li>Benchmarked RRAM vs STT-MRAM across switching delay, read latency, and write energy to guide NVM selection for AI hardware memory subsystems</li>
+        <li>STT-MRAM achieved 31× lower write energy at bit-cell and 158× lower at 32-bit array level vs RRAM; sub-10 ns read/write latencies across both</li>
       </ul>
       <div class="project-footer">
         <div class="project-metrics"><span class="metric-tag">31× lower write energy (1-bit)</span><span class="metric-tag">158× lower (32-bit)</span><span class="metric-tag">Sub-10 ns</span></div>
@@ -339,9 +364,9 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       </div>
       <div class="timeline-place">University of Pennsylvania (UPenn SEAS)</div>
       <ul class="timeline-bullets">
-        <li>Specialization: Digital VLSI Design, Computer Organization & Design, Semiconductor Memory Design</li>
-        <li>Graduate Research Assistant — Miskin Lab (neuromorphic hardware and analog ML inference)</li>
-        <li>RISC-V SoC tapeout on TSMC 40nm — full Genus → Innovus ASIC flow, STA, and timing closure</li>
+        <li>Specialization: Digital VLSI Design, Computer Organization &amp; Design, Semiconductor Memory Design</li>
+        <li>Graduate Research Assistant — RISC-V SoC tapeout on TSMC 40nm, full Genus → Innovus ASIC flow, STA, and timing closure</li>
+        <li>Graduate Research Assistant — Miskin Lab, hardware-based AI accelerator design and on-chip learning architectures</li>
       </ul>
     </div>
 
@@ -403,11 +428,11 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     <div class="skill-group">
       <div class="skill-group-label">EDA Tools</div>
       <ul class="skill-list">
-        <li><span class="skill-dot"></span>Cadence Virtuoso · Spectre</li>
         <li><span class="skill-dot"></span>Genus (Synthesis)</li>
         <li><span class="skill-dot"></span>Innovus (P&amp;R)</li>
         <li><span class="skill-dot"></span>Xcelium · Chipyard · mflowgen</li>
         <li><span class="skill-dot"></span>Xilinx Vivado · cocotb</li>
+        <li><span class="skill-dot"></span>Cadence Virtuoso · Spectre</li>
       </ul>
     </div>
   </div>
@@ -419,7 +444,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 
 <section id="contact">
   <div class="section-label">Contact</div>
-  <p class="contact-tagline">Open to Summer 2026 internships in ASIC design, physical design, and digital RTL.</p>
+  <p class="contact-tagline">Open to Summer 2026 internships in digital RTL, ASIC design, and physical design.</p>
   <div class="contact-links">
     <a href="mailto:patel5@seas.upenn.edu" class="btn">patel5@seas.upenn.edu</a>
     <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
@@ -449,228 +474,75 @@ setTimeout(type,900);
 <canvas id="bg-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
 <script>
 (function(){
-  const canvas = document.getElementById('bg-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, nets = [], pads = [];
-  const GRID = 24;
-  const TRACE_COLOR = 'rgba(59,130,246,';
-  const PAD_COLOR = 'rgba(100,160,255,';
-
-  function snap(v){ return Math.round(v / GRID) * GRID; }
-
-  function resize(){
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-    build();
-  }
-
+  const canvas=document.getElementById('bg-canvas'),ctx=canvas.getContext('2d');
+  let W,H,nets=[],pads=[];
+  const GRID=24,TC='rgba(59,130,246,',PC='rgba(100,160,255,';
+  function snap(v){return Math.round(v/GRID)*GRID;}
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;build();}
   function build(){
-    nets = [];
-    pads = [];
-
-    // Build dense PCB-like routing
-    // Horizontal bus groups
-    const hBuses = 6;
-    for(let b = 0; b < hBuses; b++){
-      const baseY = snap(H * (0.1 + b * 0.15));
-      const tracesInBus = 3 + Math.floor(Math.random() * 4);
-      for(let t = 0; t < tracesInBus; t++){
-        const y = baseY + t * GRID;
-        if(y > H) continue;
-        const startX = snap(Math.random() * W * 0.3);
-        const endX = snap(startX + W * (0.3 + Math.random() * 0.5));
-        
-        // Add bends
-        const pts = [{x: startX, y}];
-        let cx = startX;
-        
-        // Random via/bend points
-        const bends = Math.floor(Math.random() * 3);
-        for(let i = 0; i < bends; i++){
-          const nx = snap(cx + GRID * (4 + Math.floor(Math.random() * 8)));
-          if(nx >= endX) break;
-          const ny = snap(y + GRID * (Math.random() < 0.5 ? 2 : -2));
-          pts.push({x: nx, y});
-          pts.push({x: nx, y: ny});
-          cx = nx;
-          // Continue horizontally at new y
-          const ex = snap(cx + GRID * (3 + Math.floor(Math.random() * 6)));
-          pts.push({x: ex, y: ny});
-          pts.push({x: ex, y});
-          cx = ex;
+    nets=[];pads=[];
+    for(let b=0;b<6;b++){
+      const baseY=snap(H*(0.1+b*0.15)),n=3+Math.floor(Math.random()*4);
+      for(let t=0;t<n;t++){
+        const y=baseY+t*GRID;if(y>H)continue;
+        const sx=snap(Math.random()*W*0.3),ex=snap(sx+W*(0.3+Math.random()*0.5));
+        const pts=[{x:sx,y}];let cx=sx;
+        for(let i=0;i<Math.floor(Math.random()*3);i++){
+          const nx=snap(cx+GRID*(4+Math.floor(Math.random()*8)));if(nx>=ex)break;
+          const ny=snap(y+GRID*(Math.random()<0.5?2:-2));
+          pts.push({x:nx,y},{x:nx,y:ny});cx=nx;
+          const ex2=snap(cx+GRID*(3+Math.floor(Math.random()*6)));
+          pts.push({x:ex2,y:ny},{x:ex2,y});cx=ex2;
         }
-        pts.push({x: Math.min(endX, W), y});
-
-        // Add pad at start
-        pads.push({x: startX, y, r: 4});
-        // Vias at bends
-        for(let i = 1; i < pts.length - 1; i++){
-          if(pts[i].x !== pts[i-1].x && pts[i].y !== pts[i-1].y) continue;
-          if(i % 2 === 0) pads.push({x: pts[i].x, y: pts[i].y, r: 3, via: true});
-        }
-
-        let totalLen = 0;
-        for(let i = 1; i < pts.length; i++){
-          totalLen += Math.abs(pts[i].x - pts[i-1].x) + Math.abs(pts[i].y - pts[i-1].y);
-        }
-        if(totalLen < 10) continue;
-
-        nets.push({
-          pts,
-          totalLen,
-          pos: Math.random() * totalLen,
-          speed: 40 + Math.random() * 80,
-          sigLen: 60 + Math.random() * 100,
-          w: 0.7 + Math.random() * 0.5,
-          active: Math.random() > 0.3,
-        });
+        pts.push({x:Math.min(ex,W),y});
+        pads.push({x:sx,y,r:4});
+        for(let i=1;i<pts.length-1;i++){if(pts[i].x!==pts[i-1].x&&pts[i].y!==pts[i-1].y)continue;if(i%2===0)pads.push({x:pts[i].x,y:pts[i].y,r:3,via:true});}
+        let tl=0;for(let i=1;i<pts.length;i++)tl+=Math.abs(pts[i].x-pts[i-1].x)+Math.abs(pts[i].y-pts[i-1].y);
+        if(tl<10)continue;
+        nets.push({pts,totalLen:tl,pos:Math.random()*tl,speed:40+Math.random()*80,sigLen:60+Math.random()*100,w:0.7+Math.random()*0.5,active:Math.random()>0.3});
       }
     }
-
-    // Vertical bus groups
-    const vBuses = 5;
-    for(let b = 0; b < vBuses; b++){
-      const baseX = snap(W * (0.1 + b * 0.18));
-      const tracesInBus = 2 + Math.floor(Math.random() * 3);
-      for(let t = 0; t < tracesInBus; t++){
-        const x = baseX + t * GRID;
-        if(x > W) continue;
-        const startY = snap(Math.random() * H * 0.3);
-        const endY = snap(startY + H * (0.2 + Math.random() * 0.5));
-        const pts = [{x, y: startY}, {x, y: Math.min(endY, H)}];
-        let totalLen = Math.abs(pts[1].y - pts[0].y);
-        if(totalLen < 10) continue;
-
-        pads.push({x, y: startY, r: 3, via: true});
-
-        nets.push({
-          pts,
-          totalLen,
-          pos: Math.random() * totalLen,
-          speed: 30 + Math.random() * 60,
-          sigLen: 40 + Math.random() * 80,
-          w: 0.5 + Math.random() * 0.4,
-          active: Math.random() > 0.4,
-        });
+    for(let b=0;b<5;b++){
+      const bx=snap(W*(0.1+b*0.18)),n=2+Math.floor(Math.random()*3);
+      for(let t=0;t<n;t++){
+        const x=bx+t*GRID;if(x>W)continue;
+        const sy=snap(Math.random()*H*0.3),ey=snap(sy+H*(0.2+Math.random()*0.5));
+        const pts=[{x,y:sy},{x,y:Math.min(ey,H)}];
+        const tl=Math.abs(pts[1].y-pts[0].y);if(tl<10)continue;
+        pads.push({x,y:sy,r:3,via:true});
+        nets.push({pts,totalLen:tl,pos:Math.random()*tl,speed:30+Math.random()*60,sigLen:40+Math.random()*80,w:0.5+Math.random()*0.4,active:Math.random()>0.4});
       }
     }
-
-    // Large component pads
-    const compCount = 8 + Math.floor(Math.random() * 6);
-    for(let i = 0; i < compCount; i++){
-      pads.push({
-        x: snap(Math.random() * W),
-        y: snap(Math.random() * H),
-        r: 6 + Math.random() * 4,
-        comp: true
-      });
-    }
+    for(let i=0;i<8+Math.floor(Math.random()*6);i++)pads.push({x:snap(Math.random()*W),y:snap(Math.random()*H),r:6+Math.random()*4,comp:true});
   }
-
-  function posAlong(pts, dist){
-    let r = dist;
-    for(let i = 1; i < pts.length; i++){
-      const dx = pts[i].x - pts[i-1].x;
-      const dy = pts[i].y - pts[i-1].y;
-      const len = Math.abs(dx) + Math.abs(dy);
-      if(r <= len){
-        const t = r / len;
-        return {x: pts[i-1].x + dx * t, y: pts[i-1].y + dy * t};
-      }
-      r -= len;
+  function posAlong(pts,dist){
+    let r=dist;
+    for(let i=1;i<pts.length;i++){
+      const dx=pts[i].x-pts[i-1].x,dy=pts[i].y-pts[i-1].y,len=Math.abs(dx)+Math.abs(dy);
+      if(r<=len){const t=r/len;return{x:pts[i-1].x+dx*t,y:pts[i-1].y+dy*t};}r-=len;
     }
-    return pts[pts.length - 1];
+    return pts[pts.length-1];
   }
-
-  let last = 0;
+  let last=0;
   function draw(ts){
-    const dt = Math.min((ts - last) / 1000, 0.05);
-    last = ts;
-    ctx.clearRect(0, 0, W, H);
-
-    // Static traces
-    for(const net of nets){
-      ctx.beginPath();
-      ctx.moveTo(net.pts[0].x, net.pts[0].y);
-      for(let i = 1; i < net.pts.length; i++) ctx.lineTo(net.pts[i].x, net.pts[i].y);
-      ctx.strokeStyle = TRACE_COLOR + '0.08)';
-      ctx.lineWidth = net.w;
-      ctx.stroke();
+    const dt=Math.min((ts-last)/1000,0.05);last=ts;ctx.clearRect(0,0,W,H);
+    for(const n of nets){ctx.beginPath();ctx.moveTo(n.pts[0].x,n.pts[0].y);for(let i=1;i<n.pts.length;i++)ctx.lineTo(n.pts[i].x,n.pts[i].y);ctx.strokeStyle=TC+'0.08)';ctx.lineWidth=n.w;ctx.stroke();}
+    for(const p of pads){
+      if(p.comp){ctx.strokeStyle=PC+'0.2)';ctx.lineWidth=0.5;ctx.strokeRect(p.x-p.r,p.y-p.r,p.r*2,p.r*2);ctx.fillStyle=PC+'0.05)';ctx.fillRect(p.x-p.r,p.y-p.r,p.r*2,p.r*2);}
+      else if(p.via){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.strokeStyle=PC+'0.3)';ctx.lineWidth=0.8;ctx.stroke();ctx.beginPath();ctx.arc(p.x,p.y,p.r*0.4,0,Math.PI*2);ctx.fillStyle=PC+'0.4)';ctx.fill();}
+      else{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=PC+'0.15)';ctx.fill();ctx.beginPath();ctx.arc(p.x,p.y,p.r*0.5,0,Math.PI*2);ctx.fillStyle=PC+'0.35)';ctx.fill();}
     }
-
-    // Pads and vias
-    for(const pad of pads){
-      if(pad.comp){
-        // Square component pad
-        ctx.strokeStyle = PAD_COLOR + '0.2)';
-        ctx.lineWidth = 0.5;
-        ctx.strokeRect(pad.x - pad.r, pad.y - pad.r, pad.r * 2, pad.r * 2);
-        ctx.fillStyle = PAD_COLOR + '0.05)';
-        ctx.fillRect(pad.x - pad.r, pad.y - pad.r, pad.r * 2, pad.r * 2);
-      } else if(pad.via){
-        // Via — ring
-        ctx.beginPath();
-        ctx.arc(pad.x, pad.y, pad.r, 0, Math.PI * 2);
-        ctx.strokeStyle = PAD_COLOR + '0.3)';
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(pad.x, pad.y, pad.r * 0.4, 0, Math.PI * 2);
-        ctx.fillStyle = PAD_COLOR + '0.4)';
-        ctx.fill();
-      } else {
-        // Round pad
-        ctx.beginPath();
-        ctx.arc(pad.x, pad.y, pad.r, 0, Math.PI * 2);
-        ctx.fillStyle = PAD_COLOR + '0.15)';
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(pad.x, pad.y, pad.r * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = PAD_COLOR + '0.35)';
-        ctx.fill();
-      }
+    for(const n of nets){
+      if(!n.active)continue;n.pos=(n.pos+n.speed*dt)%n.totalLen;
+      for(let s=0;s<=20;s++){const d=n.pos-n.sigLen*(1-s/20);if(d<0||d>n.totalLen)continue;const p=posAlong(n.pts,d),t=s/20;ctx.beginPath();ctx.arc(p.x,p.y,n.w*1.5,0,Math.PI*2);ctx.fillStyle=TC+(t*t*0.7)+')';ctx.fill();}
+      const hp=posAlong(n.pts,n.pos),g=ctx.createRadialGradient(hp.x,hp.y,0,hp.x,hp.y,7);
+      g.addColorStop(0,'rgba(200,225,255,1)');g.addColorStop(0.4,'rgba(59,130,246,0.7)');g.addColorStop(1,'rgba(59,130,246,0)');
+      ctx.beginPath();ctx.arc(hp.x,hp.y,7,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+      ctx.beginPath();ctx.arc(hp.x,hp.y,1.2,0,Math.PI*2);ctx.fillStyle='rgba(230,245,255,1)';ctx.fill();
     }
-
-    // Signal pulses
-    for(const net of nets){
-      if(!net.active) continue;
-      net.pos = (net.pos + net.speed * dt) % net.totalLen;
-
-      const head = net.pos;
-      const steps = 20;
-      for(let s = 0; s <= steps; s++){
-        const d = head - net.sigLen * (1 - s / steps);
-        if(d < 0 || d > net.totalLen) continue;
-        const p = posAlong(net.pts, d);
-        const t = s / steps;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, net.w * 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = TRACE_COLOR + (t * t * 0.7) + ')';
-        ctx.fill();
-      }
-
-      // Bright head
-      const hp = posAlong(net.pts, head);
-      const g = ctx.createRadialGradient(hp.x, hp.y, 0, hp.x, hp.y, 7);
-      g.addColorStop(0, 'rgba(200,225,255,1)');
-      g.addColorStop(0.4, 'rgba(59,130,246,0.7)');
-      g.addColorStop(1, 'rgba(59,130,246,0)');
-      ctx.beginPath();
-      ctx.arc(hp.x, hp.y, 7, 0, Math.PI * 2);
-      ctx.fillStyle = g;
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(hp.x, hp.y, 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(230,245,255,1)';
-      ctx.fill();
-    }
-
     requestAnimationFrame(draw);
   }
-
-  window.addEventListener('resize', resize);
-  resize();
-  requestAnimationFrame(draw);
+  window.addEventListener('resize',resize);resize();requestAnimationFrame(draw);
 })();
 </script>
 </body>
