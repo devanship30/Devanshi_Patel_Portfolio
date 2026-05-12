@@ -6,7 +6,7 @@
 <meta name="description" content="Devanshi Patel — MSE EE at UPenn | ASIC Design, Physical Design, RTL, Digital VLSI | RISC-V Tapeout TSMC 40nm | Seeking Summer 2026 Internship">
 <title>Devanshi Patel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -23,7 +23,6 @@
   --accent-border: rgba(59,130,246,0.25);
   --accent-glow: rgba(59,130,246,0.15);
   --mono: 'DM Mono', monospace;
-  --serif: 'Instrument Serif', serif;
 }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: var(--mono); font-weight: 300; line-height: 1.7; font-size: 15px; overflow-x: hidden; }
@@ -47,8 +46,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .hero-left { flex: 1; }
 .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; opacity: 0; animation: fadeUp 0.5s ease 0.1s forwards; }
 .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); opacity: 0.5; }
-h1.hero-name { font-family: var(--serif); font-size: clamp(48px, 7vw, 88px); font-weight: 400; line-height: 1.0; color: var(--text); margin-bottom: 12px; letter-spacing: -0.02em; opacity: 0; animation: fadeUp 0.5s ease 0.2s forwards; }
-h1.hero-name em { font-style: italic; color: var(--accent); }
+h1.hero-name { font-family: var(--mono); font-size: clamp(48px, 7vw, 88px); font-weight: 300; line-height: 1.0; color: var(--text); margin-bottom: 12px; letter-spacing: -0.03em; opacity: 0; animation: fadeUp 0.5s ease 0.2s forwards; }
+h1.hero-name em { font-style: normal; color: var(--accent); }
 .hero-cursor { display: inline-block; width: 3px; height: 0.85em; background: var(--accent); margin-left: 4px; vertical-align: middle; animation: blink 1s step-end infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 .hero-typing-wrap { font-family: var(--mono); font-size: 13px; color: var(--text2); margin-bottom: 32px; letter-spacing: 0.05em; min-height: 22px; opacity: 0; animation: fadeUp 0.5s ease 0.3s forwards; }
