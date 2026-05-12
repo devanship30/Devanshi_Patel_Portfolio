@@ -61,6 +61,8 @@ h1.hero-name em { font-style: italic; color: var(--accent); }
 .stat-val { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent); display: block; margin-bottom: 3px; }
 .stat-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); }
 .hero-links { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.5s ease 0.6s forwards; }
+.hero-right { flex-shrink: 0; width: 300px; opacity: 0; animation: fadeUp 0.5s ease 0.5s forwards; }
+.hero-right img { width: 100%; height: 420px; object-fit: cover; object-position: top center; border: 1px solid var(--accent-border); filter: grayscale(15%); display: block; }
 .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 20px; border: 1px solid var(--accent-border); border-radius: 2px; color: var(--accent); background: var(--accent-dim); transition: all 0.2s; }
 .btn:hover { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
 
@@ -128,7 +130,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
-@media (max-width: 900px) { #hero { flex-direction: column; gap: 48px; padding-top: 100px; } .stats-bar { flex-wrap: wrap; } .stat-item { flex: 1 1 40%; } }
+@media (max-width: 900px) { #hero { flex-direction: column; gap: 48px; padding-top: 100px; } .stats-bar { flex-wrap: wrap; } .stat-item { flex: 1 1 40%; } .hero-right { display: none; } }
 @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { display: none; } .nav-status-label { display: none; } section { padding: 60px 20px; } .pcb-divider { padding: 0 20px; } #hero { padding: 100px 20px 60px; } .timeline { padding-left: 24px; } .timeline-dot { left: -30px; } }
 </style>
 </head>
@@ -152,9 +154,6 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 </nav>
 
 <section id="hero" style="border:none; padding-top:80px;">
-  <div class="hero-photo-wrap" style="display:flex;align-items:flex-start;gap:24px;margin-bottom:28px;">
-    <img src="photo.jpeg" alt="Devanshi Patel" onerror="this.style.display='none'" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--accent-border);flex-shrink:0;margin-top:4px;">
-  </div>
   <div class="hero-left">
     <div class="hero-eyebrow">MSE Electrical Engineering · UPenn SEAS · Class of 2027</div>
     <h1 class="hero-name">Devanshi<br><em>Patel</em></h1>
@@ -177,6 +176,9 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       <a href="https://github.com/devanship30" target="_blank" class="btn">GitHub</a>
       <a href="https://scholar.google.com/citations?user=HJh-lyoAAAAJ&hl=en" target="_blank" class="btn">Scholar</a>
     </div>
+  </div>
+  <div class="hero-right">
+    <img src="photo.jpeg" alt="Devanshi Patel" onerror="this.style.display='none'">
   </div>
 </section>
 
