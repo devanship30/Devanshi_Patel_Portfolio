@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Devanshi Patel — MSE EE at UPenn | ASIC Design, Physical Design, RTL, Digital VLSI | RISC-V Tapeout TSMC 40nm | Seeking Full-Time 2027 Roles">
+<meta name="description" content="Devanshi Patel — MSE EE at UPenn | ASIC Design, Physical Design, RTL, Digital VLSI | 28nm RTL-to-GDS RISC-V SoC | Seeking Full-Time 2027 Roles">
 <title>Devanshi Patel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -158,14 +158,13 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     <h1 class="hero-name">Devanshi<br><em>Patel</em></h1>
     <div class="hero-typing-wrap">&gt;&nbsp;<span class="hero-typing" id="typing-text"></span><span class="hero-cursor"></span></div>
     <p class="hero-desc">
-      Building silicon from <strong>RTL to tapeout</strong>. Currently taping out a
-      <strong>RISC-V SoC on TSMC 40nm</strong> at UPenn — full Genus → Innovus flow,
-      STA-driven timing closure, and tapeout sign-off. Seeking <strong>Full-Time 2027</strong>
-      roles in digital RTL, ASIC design, and physical design.
+      Taking a <strong>RISC-V SoC from RTL to GDS</strong> in a <strong>28nm process</strong> at UPenn:
+      synthesis, logic equivalence, place-and-route, CTS, signoff STA, IR analysis, and DRC/LVS.
+      Seeking <strong>Full-Time 2027</strong> roles in physical design, RTL design, and ASIC design.
     </p>
     <div class="stats-bar">
-      <div class="stat-item"><span class="stat-val">TSMC 40nm</span><span class="stat-label">Process Node</span></div>
-      <div class="stat-item"><span class="stat-val">Tapeout</span><span class="stat-label">RISC-V SoC</span></div>
+      <div class="stat-item"><span class="stat-val">28nm</span><span class="stat-label">Process Node</span></div>
+      <div class="stat-item"><span class="stat-val">RTL-to-GDS</span><span class="stat-label">RISC-V SoC</span></div>
       <div class="stat-item"><span class="stat-val">IEEE Pub.</span><span class="stat-label">SETCOM 2025</span></div>
       <div class="stat-item"><span class="stat-val">UPenn SEAS</span><span class="stat-label">MSE EE · 2027</span></div>
     </div>
@@ -206,28 +205,28 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     <div class="timeline-item">
       <div class="timeline-dot active"></div>
       <div class="timeline-header">
-        <div class="timeline-role">Graduate Research Assistant — RISC-V Chip Tapeout</div>
+        <div class="timeline-role">Graduate Research Assistant, RISC-V SoC Physical Design</div>
         <div class="timeline-date">Feb 2026 — Present</div>
       </div>
       <div class="timeline-place">Prof. Radway's Lab · University of Pennsylvania</div>
       <ul class="timeline-bullets">
-        <li>Generated RISC-V SoC RTL via Chipyard (Chisel); authored SDC constraints for multi-corner synthesis targeting TSMC 40nm PDK</li>
-        <li>Ran complete mflowgen ASIC flow: logic synthesis (Genus), place-and-route with CTS (Innovus), STA-driven timing closure, and PPA analysis across synthesis iterations</li>
-        <li>Resolved setup/hold violations and achieved full tapeout sign-off through iterative physical design closure</li>
+        <li>Run the RTL-to-GDS flow for a Chipyard-generated RISC-V SoC in a 28nm process using rflowgen, a Rust-based flow generator</li>
+        <li>Synthesis (Genus), logic equivalence checking (Conformal), and Innovus floorplan, placement, CTS, routing, and post-CTS/post-route optimization</li>
+        <li>Signoff RC extraction (SPEF), Tempus STA, and Voltus static IR analysis; Calibre GDS merge, metal fill, LVS, and DRC debug</li>
+        <li>Ran the earlier 40nm implementation (mflowgen) with SDC constraints and multi-corner STA; integrating PrimeTime for signoff timing (in progress)</li>
       </ul>
     </div>
 
     <div class="timeline-item">
-      <div class="timeline-dot active"></div>
+      <div class="timeline-dot"></div>
       <div class="timeline-header">
-        <div class="timeline-role">Graduate Research Assistant</div>
-        <div class="timeline-date">Feb 2026 — Present</div>
+        <div class="timeline-role">Graduate Research Assistant, Brain-Inspired Hardware</div>
+        <div class="timeline-date">Feb 2026 — Jul 2026</div>
       </div>
       <div class="timeline-place">Miskin Lab · University of Pennsylvania</div>
       <ul class="timeline-bullets">
-        <li>Investigating digital hardware implementations of local learning rules — analyzing compute graphs and memory access patterns for on-chip training accelerator design</li>
-        <li>Running full ASIC flow on RISC-V SoC — Genus synthesis, Innovus P&R with CTS, STA-driven timing closure, and PPA analysis across iterations; targeting TSMC 40nm PDK; resolved setup/hold violations through waveform debugging</li>
-        <li>Resolved setup/hold violations through iterative physical design closure; targeting full tapeout sign-off pending PDK access</li>
+        <li>Studied neuromorphic learning frameworks (contrastive local learning, Equilibrium Propagation) for low-power hardware ML</li>
+        <li>Modeled nonlinear MOSFET networks via energy minimization for on-chip adaptive learning</li>
       </ul>
     </div>
 
@@ -239,8 +238,8 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       </div>
       <div class="timeline-place">eInfochips</div>
       <ul class="timeline-bullets">
-        <li>Gained exposure to ASIC design flow through literature survey of ADC architectures and analysis of chip manufacturing data across process nodes (&gt;60nm)</li>
-        <li>Designed and simulated a signal conversion pipeline in MATLAB Simulink; developed familiarity with block-level design methodology and verification</li>
+        <li>Designed and simulated a 1-bit Sigma-Delta ADC in MATLAB Simulink applying noise shaping</li>
+        <li>Analyzed chip manufacturing data (&gt;60nm), gaining exposure to the ASIC design flow and semiconductor processes</li>
       </ul>
     </div>
 
@@ -261,11 +260,11 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       <div class="project-name">RISC-V Out-of-Order SoC with Systolic Array AI Accelerator</div>
       <ul class="project-bullets">
         <li>Architecting an out-of-order RV32I core with 16-entry reorder buffer, 8-entry reservation stations, register renaming, and a bimodal branch predictor</li>
-        <li>Integrating a 4×4 INT8 weight-stationary systolic array accelerator via an AXI4-Stream interface for image convolution workloads</li>
-        <li>Designed an AXI4 crossbar and on-chip SRAM integration to unify the compute core and accelerator into a single SoC-level interconnect, targeting IHP SG13G2 130nm</li>
+        <li>Integrating an 8×8 INT8 weight-stationary systolic array accelerator via an AXI4-Stream interface for image convolution workloads</li>
+        <li>Designed an AXI4 crossbar (2 masters, 4 slaves, round-robin arbitration) with an APB bridge and a shared on-chip SRAM macro, targeting IHP SG13G2 130nm</li>
       </ul>
       <div class="project-footer">
-        <div class="project-metrics"><span class="metric-tag">16-entry ROB</span><span class="metric-tag">4×4 INT8 Systolic Array</span><span class="metric-tag">IHP SG13G2 130nm</span></div>
+        <div class="project-metrics"><span class="metric-tag">16-entry ROB</span><span class="metric-tag">8×8 INT8 Systolic Array</span><span class="metric-tag">IHP SG13G2 130nm</span></div>
         <div style="display:flex;gap:16px;align-items:center"><div class="project-tools">SystemVerilog · AXI4</div><a href="https://github.com/devanship30/riscv-ooo-systolic-soc" target="_blank" class="project-link">↗ GitHub</a></div>
       </div>
     </div>
@@ -280,7 +279,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       </ul>
       <div class="project-footer">
         <div class="project-metrics"><span class="metric-tag">RV32I ISA</span><span class="metric-tag">AXI-Lite</span><span class="metric-tag">cocotb verified</span></div>
-        <div style="display:flex;gap:16px;align-items:center"><div class="project-tools">SystemVerilog · Tcl · cocotb</div><a href="https://github.com/devanship30/CIS-5710_HOMEWORK_DEVANSHI" target="_blank" class="project-link">↗ GitHub</a></div>
+        <div class="project-tools">SystemVerilog · Tcl · cocotb</div>
       </div>
     </div>
 
@@ -313,10 +312,10 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     </div>
 
     <div class="project-card">
-      <div class="project-tag">Memory Architecture · Digital Design · April 2026</div>
+      <div class="project-tag">Memory Design · Circuit Simulation · Jan 2026 – April 2026</div>
       <div class="project-name">RRAM &amp; STT-MRAM Characterization</div>
       <ul class="project-bullets">
-        <li>Designed digital memory interface logic: voltage-mode and current-mode sense amplifiers for 1-bit and 32-bit array read/write; verified functionality across process corners</li>
+        <li>Integrated Verilog-A NVM compact models with custom voltage-mode and current-mode sense amplifiers for 1-bit and 32-bit array read/write</li>
         <li>Benchmarked RRAM vs STT-MRAM across switching delay, read latency, and write energy to guide NVM selection for AI hardware memory subsystems</li>
         <li>STT-MRAM achieved 31× lower write energy at bit-cell and 158× lower at 32-bit array level vs RRAM; sub-10 ns read/write latencies across both</li>
       </ul>
@@ -374,9 +373,9 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       </div>
       <div class="timeline-place">University of Pennsylvania (UPenn SEAS)</div>
       <ul class="timeline-bullets">
-        <li>Specialization: Digital VLSI Design, Computer Organization &amp; Design, Semiconductor Memory Design</li>
-        <li>Graduate Research Assistant — RISC-V SoC tapeout on TSMC 40nm, full Genus → Innovus ASIC flow, STA, and timing closure</li>
-        <li>Graduate Research Assistant — Miskin Lab, hardware-based AI accelerator design and on-chip learning architectures</li>
+        <li>Coursework: Digital VLSI Design, Computer Organization &amp; Design, Microprocessor Design, Out-of-Order CPU Architecture, Semiconductor Memory Design, System on Chip Architecture</li>
+        <li>Graduate Research Assistant, RISC-V SoC Physical Design: 28nm RTL-to-GDS flow, signoff STA, IR analysis, and DRC/LVS</li>
+        <li>Graduate Research Assistant, Miskin Lab: neuromorphic learning frameworks for low-power hardware ML</li>
       </ul>
     </div>
 
@@ -420,9 +419,11 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       <ul class="skill-list">
         <li><span class="skill-dot"></span>RTL Design · FSM &amp; Datapath</li>
         <li><span class="skill-dot"></span>Logic Synthesis · SDC Constraints</li>
-        <li><span class="skill-dot"></span>STA · Timing Closure · CTS</li>
+        <li><span class="skill-dot"></span>Floorplanning · Place &amp; Route · CTS</li>
+        <li><span class="skill-dot"></span>STA · Timing Closure · IR Analysis</li>
+        <li><span class="skill-dot"></span>LEC · DRC / LVS</li>
         <li><span class="skill-dot"></span>PPA Analysis · ASIC Design Flow</li>
-        <li><span class="skill-dot"></span>AXI-Lite · Clock Gating · SRAM</li>
+        <li><span class="skill-dot"></span>AXI4 · AXI-Lite · Clock Gating · SRAM</li>
       </ul>
     </div>
     <div class="skill-group">
@@ -438,9 +439,9 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     <div class="skill-group">
       <div class="skill-group-label">EDA Tools</div>
       <ul class="skill-list">
-        <li><span class="skill-dot"></span>Genus (Synthesis)</li>
-        <li><span class="skill-dot"></span>Innovus (P&amp;R)</li>
-        <li><span class="skill-dot"></span>Xcelium · Chipyard · mflowgen</li>
+        <li><span class="skill-dot"></span>Genus · Conformal · Innovus</li>
+        <li><span class="skill-dot"></span>Tempus · Voltus · Calibre</li>
+        <li><span class="skill-dot"></span>Xcelium · Chipyard · rflowgen · mflowgen</li>
         <li><span class="skill-dot"></span>Xilinx Vivado · cocotb</li>
         <li><span class="skill-dot"></span>Cadence Virtuoso · Spectre</li>
       </ul>
@@ -454,7 +455,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 
 <section id="contact">
   <div class="section-label">Contact</div>
-  <p class="contact-tagline">Open to Full-Time 2027 roles in digital RTL, ASIC design, and physical design.</p>
+  <p class="contact-tagline">Open to Full-Time 2027 roles in physical design, RTL design, and ASIC design.</p>
   <div class="contact-links">
     <a href="mailto:patel5@engineering.upenn.edu" class="btn">patel5@engineering.upenn.edu</a>
     <a href="https://linkedin.com/in/devanshipatel3012" target="_blank" class="btn">LinkedIn</a>
@@ -470,7 +471,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 </footer>
 
 <script>
-const roles=['ASIC Design Engineer','Digital Design Engineer','RTL Design Engineer','RISC-V SoC · TSMC 40nm','Digital VLSI · UPenn SEAS'];
+const roles=['Physical Design Engineer','RTL Design Engineer','ASIC Design Engineer','RTL-to-GDS · 28nm RISC-V SoC','Digital VLSI · UPenn SEAS'];
 let ri=0,ci=0,del=false;
 const el=document.getElementById('typing-text');
 function type(){
